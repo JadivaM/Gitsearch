@@ -29,5 +29,6 @@
     "dev": "concurrently --kill-others-on-fail \"yarn run server\" \"yarn run client\"",
     "heroku-postbuild": "cd client && yarn && yarn run build",
     "prettify": "prettier '*/**/*.js' '*/**/*.jsx' '*/**/*.html' '*/**/*.css' --write"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
