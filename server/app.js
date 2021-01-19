@@ -2,7 +2,8 @@ require('./db/config');
 const express = require('express'),
   path = require('path'),
   morgan = require('morgan');
-openRoutes = require('./routes/open');
+(cookieParser = require('cookie-parser')),
+  (openRoutes = require('./routes/open'));
 
 const app = express();
 
