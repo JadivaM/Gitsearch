@@ -37,3 +37,5 @@ exports.loginUser = async (req, res) => {
     res.status(400).json({ error: e.toString() });
   }
 };
+
+exports.getCurrentUser = async (req, res) => res.json(req.user);
