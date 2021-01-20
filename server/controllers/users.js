@@ -56,3 +56,27 @@ exports.updateCurrentUser = async (req, res) => {
     res.status(400).send({ error: e.toString() });
   }
 };
+
+exports.logoutUser = async (req, res) => {
+  try {
+    req.user.tokens = req.user.tokens.filter((token) => {
+      return token.token !== req.cookies.jwt;
+    });
+    await req.user.save();
+    res.clearCookie('jwt');
+    res.json({ message: 'Successfully logged out' });
+  } catch (e) {
+    res.status(500).json({ error: e.toString() });
+  }
+};
+
+exports.logoutAllDevices = async (req, res) => {
+  try {
+    req.user.tokens = [];
+    await req.user.save();
+    res.clearCookie('jwt');
+    res.json({ message: 'Successfully logged out of all devices' });
+  } catch (e) {
+    res.status(500).send();
+  }
+};
