@@ -1,5 +1,10 @@
 const User = require('../db/models/user'),
-  { sendWelcomeEmail, sendCancellationEmail } = require('../emails/');
+  {
+    sendWelcomeEmail,
+    sendCancellationEmail,
+    forgotPasswordEmail
+  } = require('../emails/'),
+  jwt = require('jsonwebtoken');
 
 exports.createUser = async (req, res) => {
   const { name, email, password } = req.body;
@@ -35,6 +40,40 @@ exports.loginUser = async (req, res) => {
     res.json(user);
   } catch (e) {
     res.status(400).json({ error: e.toString() });
+  }
+};
+
+exports.requestPasswordReset = async (req, res) => {
+  try {
+    const { email } = req.query,
+      user = await User.findOne({ email });
+    if (!user) throw new Error('Account does not exist');
+    const token = jwt.sign(
+      { _id: user._id.toString(), name: user.name },
+      process.env.JWT_SECRET,
+      { expiresIn: '10m' }
+    );
+    forgotPasswordEmail(email, token);
+    res.json({ message: 'Check your email for reset password instructions' });
+  } catch (e) {
+    res.json({ error: e.toString() });
+  }
+};
+
+exports.passwordRedirect = async (req, res) => {
+  const { token } = req.params;
+  try {
+    jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
+      if (err) throw new Error(err.message);
+    });
+    res.cookie('jwt', token, {
+      httpOnly: true,
+      maxAge: 600000,
+      sameSite: 'Strict'
+    });
+    res.redirect(process.env.URL + '/update-password');
+  } catch (e) {
+    res.json({ error: e.toString() });
   }
 };
 
@@ -89,5 +128,16 @@ exports.deleteUser = async (req, res) => {
     res.json({ message: 'Account has been deleted' });
   } catch (e) {
     res.status(500).json({ error: e.toString() });
+  }
+};
+
+exports.updatePassword = async (req, res) => {
+  try {
+    req.user.password = req.body.password;
+    await req.user.save();
+    res.clearCookie('jwt');
+    res.json({ message: 'Password successfully updated!' });
+  } catch (e) {
+    res.json({ error: e.toString() });
   }
 };

@@ -21,7 +21,23 @@ const sendCancellationEmail = (email, name) => {
   });
 };
 
+const forgotPasswordEmail = (email, token) => {
+  const exampleHTMLEmail = `
+  <a target="_blank" rel="noopener noreferrer" href="${process.env.APP_URL}/password/${token}">Reset password</a>
+  `;
+
+  sgMail.send({
+    to: email,
+    from: `${process.env.FROM_EMAIL}`,
+    subject: 'Password reset',
+    text:
+      'Hi `${name}`! We received a request to reset your password. Please click the link below to reset your password.',
+    html: exampleHTMLEmail
+  });
+};
+
 module.exports = {
   sendWelcomeEmail,
-  sendCancellationEmail
+  sendCancellationEmail,
+  forgotPasswordEmail
 };
