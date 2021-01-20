@@ -1,5 +1,5 @@
 const User = require('../db/models/user'),
-  { sendWelcomeEmail } = require('../emails/');
+  { sendWelcomeEmail, sendCancellationEmail } = require('../emails/');
 
 exports.createUser = async (req, res) => {
   const { name, email, password } = req.body;
@@ -78,5 +78,16 @@ exports.logoutAllDevices = async (req, res) => {
     res.json({ message: 'Successfully logged out of all devices' });
   } catch (e) {
     res.status(500).send();
+  }
+};
+
+exports.deleteUser = async (req, res) => {
+  try {
+    await req.user.remove();
+    sendCancellationEmail(req.user.email, req.user.name);
+    res.clearCookie('jwt');
+    res.json({ message: 'Account has been deleted' });
+  } catch (e) {
+    res.status(500).json({ error: e.toString() });
   }
 };
