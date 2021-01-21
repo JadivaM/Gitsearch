@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ContextDemo from './components/ContextDemo';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 const App = () => {
