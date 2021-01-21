@@ -43,7 +43,7 @@ const LoginForm = () => {
               </Button>
             </Form.Group>
           </Form>
-          <Link to="/home" style={{ marginLeft: 60 }}>
+          <Link to="/" style={{ marginLeft: 60 }}>
             Don't have an account yet? Sign up
           </Link>
         </Container>
