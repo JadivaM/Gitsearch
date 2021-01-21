@@ -14,8 +14,8 @@ exports.createUser = async (req, res) => {
       email,
       password
     });
-    sendWelcomeEmail(user.email, user.name);
     const token = await user.generateAuthToken();
+    sendWelcomeEmail(user.email, user.name);
     res.cookie('jwt', token, {
       httpOnly: true,
       sameSite: 'Strict',
