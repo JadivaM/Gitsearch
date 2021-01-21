@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
+import axios from 'axios';
 
-const Signup = () => {
+const Signup = ({ history }) => {
+  const { setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleSignUp = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/', formData);
+      sessionStorage.setItem('user', response.data);
+      setCurrentUser(response.data);
+      history.push('/');
+    } catch (error) {
+      console.log('Signup error:', error);
+    }
+  };
+
   return (
     <>
       <div className="main-container">
@@ -15,7 +31,7 @@ const Signup = () => {
           className="form-container"
           style={{ backgroundColor: 'white', width: 400, height: 500 }}
         >
-          <Form className="form" style={{ width: 300 }}>
+          <Form className="form" style={{ width: 300 }} onSubmit={handleSignUp}>
             <h2 style={{ textAlign: 'center' }}>Get started</h2>
             <p>Search, save, and follow Github users all in one place.</p>
             <Form.Group>

@@ -1,13 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../context/AppContext';
+import axios from 'axios';
 
-const LoginForm = () => {
+const LoginForm = ({ history }) => {
   const [formData, setFormData] = useState(null);
+  const { setCurrentUser } = useContext(AppContext);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('/login', formData);
+      setCurrentUser(response.data);
+      sessionStorage.setItem('user', response.data);
+      history.push('/');
+    } catch (error) {
+      console.log('Login Error: ', error);
+    }
+  };
+
   return (
     <>
       <div className="main-container">
@@ -15,7 +31,7 @@ const LoginForm = () => {
           className="form-container"
           style={{ backgroundColor: 'white', width: 400, height: 375 }}
         >
-          <Form className="form" style={{ width: 300 }}>
+          <Form className="form" style={{ width: 300 }} onSubmit={handleLogin}>
             <h2 style={{ textAlign: 'center' }}>Welcome back!</h2>
             <Form.Group>
               <Form.Label htmlFor="email">Email Address</Form.Label>
@@ -43,7 +59,7 @@ const LoginForm = () => {
               </Button>
             </Form.Group>
           </Form>
-          <Link to="/home" style={{ marginLeft: 60 }}>
+          <Link to="/" style={{ marginLeft: 60 }}>
             Don't have an account yet? Sign up
           </Link>
         </Container>
