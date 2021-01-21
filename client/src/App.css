@@ -1,11 +1,27 @@
-/* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
-
-#demo {
-  width: 100vw;
-  height: 100vh;
+.homeBackgroundImage {
+  background-image: url('wyncodeBase.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 1000px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-/* END DEMO */
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.main-container {
+  margin-top: 200px;
+}
+
+.form-container {
+  border: rgb(189, 185, 185) solid 1px;
+  border-radius: 10%;
+  padding-top: 20px;
+}
