@@ -1,5 +1,5 @@
-.homeBackgroundImage {
-  background-image: url('wyncodeBase.png');
+.homeBackgroundImage,
+.loginBackgroundImage {
   background-size: contain;
   background-repeat: no-repeat;
   width: 80%;
@@ -7,6 +7,14 @@
   display: flex;
   justify-content: center;
   margin: auto;
+}
+
+.homeBackgroundImage {
+  background-image: url('wyncodeBase.png');
+}
+
+.loginBackgroundImage {
+  background-image: url('wyncodeBackground.png');
 }
 
 .form {
@@ -17,7 +25,9 @@
 }
 
 .main-container {
-  margin-top: 200px;
+  /* margin-top: 200px; */
+  display: flex;
+  align-items: center;
 }
 
 .form-container {
