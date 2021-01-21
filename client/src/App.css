@@ -1,11 +1,10 @@
-/* JUST FOR DEMO PURPORSES, REPLACE WITH YOUR OWN CODE */
-
-#demo {
-  width: 100vw;
-  height: 100vh;
+.homeBackgroundImage {
+  background-image: url('wyncodeBase.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 1500px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
-
-/* END DEMO */
