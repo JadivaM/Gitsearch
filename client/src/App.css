@@ -3,8 +3,25 @@
   background-size: contain;
   background-repeat: no-repeat;
   width: 80%;
-  height: 1500px;
+  height: 1000px;
   display: flex;
   justify-content: center;
   margin: auto;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+.main-container {
+  margin-top: 200px;
+}
+
+.form-container {
+  border: rgb(189, 185, 185) solid 1px;
+  border-radius: 10%;
+  padding-top: 20px;
 }
