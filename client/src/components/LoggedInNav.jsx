@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, NavDropdown, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const LoggedInNav = () => {
   return (
@@ -10,9 +11,11 @@ const LoggedInNav = () => {
             <Navbar.Brand href="#home">Wynhub</Navbar.Brand>
           </div>
           <div className="search-nav">
-            <Button variant="link" style={{ color: 'white' }}>
-              Search
-            </Button>
+            <Link to="/search">
+              <Button variant="link" style={{ color: 'white' }}>
+                Search
+              </Button>
+            </Link>
           </div>
           <div className="dropdown-nav">
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
