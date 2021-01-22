@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Form, FormControl, Button } from 'react-bootstrap';
 
-const Searchbar = () => {
+const Searchbar = ({ setSearchResults }) => {
   const history = useHistory();
   const [search, setSearch] = useState('');
-  const [results, setResults] = useState('');
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -18,9 +17,9 @@ const Searchbar = () => {
         return data.json();
       })
       .then((res) => {
-        setResults(res);
+        setSearchResults(res.data);
         console.log(res);
-        history.push('/searchresults');
+        history.push('/results');
       })
       .catch((err) => {
         console.log(err);
@@ -31,9 +30,10 @@ const Searchbar = () => {
     <>
       <Form inline onSubmit={handleSubmit}>
         <FormControl
+          size="lg"
           onChange={handleSearch}
           type="text"
-          placeholder="Search for Github users"
+          placeholder="Search for a username"
           className="mr-sm-2"
         />
         <Button variant="primary" type="submit">
