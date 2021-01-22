@@ -1,14 +1,11 @@
 import React from 'react';
-import NavigationBar from '../components/NavigationBar';
-import Signup from '../components/Signup';
+import LoggedInNav from '../components/LoggedInNav';
 
 const Home = () => {
   return (
     <>
-      <NavigationBar />
-      <div className="homeBackgroundImage">
-        <Signup />
-      </div>
+      <LoggedInNav />
+      <h1>Home!</h1>
     </>
   );
 };
