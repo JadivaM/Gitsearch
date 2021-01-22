@@ -5,6 +5,7 @@ import { Form, FormControl, Button } from 'react-bootstrap';
 const Searchbar = () => {
   const history = useHistory();
   const [search, setSearch] = useState('');
+  const [results, setResults] = useState('');
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -17,7 +18,9 @@ const Searchbar = () => {
         return data.json();
       })
       .then((res) => {
+        setResults(res);
         console.log(res);
+        history.push('/searchresults');
       })
       .catch((err) => {
         console.log(err);
