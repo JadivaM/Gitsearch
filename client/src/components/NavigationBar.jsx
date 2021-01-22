@@ -5,7 +5,12 @@ const NavigationBar = () => {
   return (
     <div>
       <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="#home">Wynhub</Navbar.Brand>
+        <Navbar.Brand
+          href="#home"
+          style={{ width: '100%', textAlign: 'center' }}
+        >
+          Wynhub
+        </Navbar.Brand>
       </Navbar>
     </div>
   );
