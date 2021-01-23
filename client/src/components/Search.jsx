@@ -26,20 +26,27 @@ const Search = () => {
 
   return (
     <>
-      <Form inline onSubmit={handleSubmit}>
-        <FormControl
-          size="lg"
-          onChange={handleSearch}
-          type="text"
-          placeholder="Search for a username"
-          className="mr-sm-2"
-        />
-        <Button variant="primary" type="submit">
-          Search
-        </Button>
-      </Form>
-      <div className="search-results">
-        <ResultsCard users={users} />
+      <div className="search-container">
+        <h1 style={{ textAlign: 'center', paddingTop: 20 }}>
+          Search for a Github user
+        </h1>
+        <div className="search-bar">
+          <Form inline onSubmit={handleSubmit}>
+            <FormControl
+              size="lg"
+              onChange={handleSearch}
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2"
+            />
+            <Button variant="primary" type="submit">
+              Search
+            </Button>
+          </Form>
+        </div>
+        <div className="search-results">
+          <ResultsCard users={users} />
+        </div>
       </div>
     </>
   );

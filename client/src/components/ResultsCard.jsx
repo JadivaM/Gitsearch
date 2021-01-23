@@ -15,7 +15,7 @@ const ResultsCard = ({ users }) => {
             {' '}
             <Button variant="primary">View profile</Button>
           </a>
-          <Button variant="primary" style={{ marginLeft: 70 }}>
+          <Button variant="primary" style={{ marginLeft: 90 }}>
             Save User
           </Button>
         </Card.Body>

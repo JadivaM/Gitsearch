@@ -6,8 +6,9 @@ const Home = () => {
   return (
     <>
       <LoggedInNav />
-      <Search />
-      <h1>Home!</h1>
+      <div className="searchBackgroundImage">
+        <Search />
+      </div>
     </>
   );
 };
