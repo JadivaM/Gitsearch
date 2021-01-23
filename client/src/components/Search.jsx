@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Form, FormControl, Button } from 'react-bootstrap';
+import ResultsCard from '../components/ResultsCard';
 
-const Searchbar = ({ setSearchResults }) => {
-  const history = useHistory();
+const Search = () => {
   const [search, setSearch] = useState('');
+  const [users, setUsers] = useState([]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     fetch(`https://api.github.com/users/${search}`)
       .then((data) => {
         return data.json();
       })
       .then((res) => {
-        setSearchResults(res);
-        console.log(res);
-        history.push('/results');
+        setUsers(res);
       })
       .catch((err) => {
         console.log(err);
@@ -40,8 +38,11 @@ const Searchbar = ({ setSearchResults }) => {
           Search
         </Button>
       </Form>
+      <div className="search-results">
+        <ResultsCard users={users} />
+      </div>
     </>
   );
 };
 
-export default Searchbar;
+export default Search;
