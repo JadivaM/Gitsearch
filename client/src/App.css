@@ -17,6 +17,16 @@
   background-image: url('wyncodeBackground.png');
 }
 
+.searchBackgroundImage {
+  background-image: url('octocat.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
 .form {
   display: flex;
   justify-content: center;
@@ -50,4 +60,26 @@
   right: 0;
   position: absolute;
   margin-right: 15px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  height: 900px;
+  margin: auto;
+  border: rgb(189, 185, 185) solid 1px;
+  border-radius: 10%;
+  background-color: rgba(255, 255, 255, 0.781);
+  margin-top: 0;
+}
+
+.search-bar,
+.search-results {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 300;
+  margin: auto;
 }
