@@ -17,7 +17,7 @@ const Searchbar = ({ setSearchResults }) => {
         return data.json();
       })
       .then((res) => {
-        setSearchResults(res.data);
+        setSearchResults(res);
         console.log(res);
         history.push('/results');
       })
