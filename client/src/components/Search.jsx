@@ -26,7 +26,7 @@ const Search = () => {
 
   return (
     <>
-      <div className="search-container" style={{ marginRight: 100 }}>
+      <div className="search-container">
         <h2 style={{ textAlign: 'center', paddingTop: 20 }}>
           Search for a Github user
         </h2>

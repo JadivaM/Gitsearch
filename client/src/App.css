@@ -17,15 +17,16 @@
   background-image: url('wyncodeBackground.png');
 }
 
-/* .searchBackgroundImage {
+.search-background-img {
   background-image: url('octocat.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 95%;
+  height: 900px;
   display: flex;
   justify-content: center;
   margin: auto;
-} */
+}
 
 .form {
   display: flex;
@@ -64,16 +65,16 @@
 
 .search-container {
   display: flex;
-  right: 0;
-  position: absolute;
+  justify-content: center;
+
   flex-direction: column;
-  width: 30%;
+  width: 40%;
   height: 700px;
   margin: auto;
   border: rgb(189, 185, 185) solid 1px;
   border-radius: 10%;
-  background-color: rgba(255, 255, 255, 0.781);
-  margin-top: 0;
+  background-color: rgba(255, 255, 255, 0.835);
+  margin-top: 100px;
 }
 
 .search-bar,
@@ -86,17 +87,18 @@
 }
 
 .home-container {
-  width: 100%;
+  width: 80%;
   height: 1000px;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  margin: auto;
 }
 
 .profile-container {
-  width: 50%;
-  height: 700px;
+  width: 80%;
+  height: 100vh;
   border: rgba(117, 117, 117, 0.609) solid 1px;
-  margin-left: 100px;
+  background-color: white;
 }
 
 .cover-photo-img {
@@ -117,4 +119,9 @@
   border-radius: 50%;
   margin-left: 50px;
   margin-top: 50px;
+}
+.profile-saved-users {
+  border: rgba(117, 117, 117, 0.609) solid 1px;
+  height: 100vh;
+  width: 100vw;
 }

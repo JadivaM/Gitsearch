@@ -4,6 +4,7 @@ import SignUpPage from './pages/SignUpPage';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Home from './pages/Home';
+import SearchPage from './pages/SearchPage';
 import { AppContextProvider } from './context/AppContext';
 import './App.css';
 
@@ -15,6 +16,7 @@ const App = () => {
           <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/" component={Home} />
+          <Route exact path="/search" component={SearchPage} />
         </Switch>
       </BrowserRouter>
     </AppContextProvider>

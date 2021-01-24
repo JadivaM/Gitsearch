@@ -10,10 +10,16 @@ const LoggedInNav = () => {
           <div className="loggedin-nav-title">
             <Navbar.Brand href="#home">Wynhub</Navbar.Brand>
           </div>
-          <div className="search-nav"></div>
+          <div className="search-nav">
+            <Link to="/search">
+              <Button variant="link">Search</Button>
+            </Link>
+          </div>
           <div className="dropdown-nav">
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.2">Home</NavDropdown.Item>
+              <Link to="/">
+                <NavDropdown.Item href="#action/3.2">Home</NavDropdown.Item>
+              </Link>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.1">Settings</NavDropdown.Item>
               <NavDropdown.Divider />
