@@ -59,9 +59,14 @@ const LoginForm = ({ history }) => {
               </Button>
             </Form.Group>
           </Form>
-          <Link to="/" style={{ marginLeft: 60 }}>
+          <Link to="/" style={{ marginLeft: 50 }}>
             Don't have an account yet? Sign up
           </Link>
+          <div>
+            <Link to="/resetpassword" style={{ marginLeft: 130 }}>
+              Forgot password
+            </Link>
+          </div>
         </Container>
       </div>
     </>
