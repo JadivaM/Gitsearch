@@ -12,20 +12,26 @@ const LoggedInNav = () => {
               <Navbar.Brand>Wynhub</Navbar.Brand>
             </Link>
           </div>
-          <div className="search-nav">
-            <Link to="/search">
-              <Button variant="link">Search</Button>
+          <div className="home-nav">
+            <Link to="/">
+              <Button variant="link" style={{ color: 'white' }}>
+                Home
+              </Button>
             </Link>
           </div>
-          <div className="dropdown-nav">
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <Link to="/">
-                <NavDropdown.Item href="#action/3.2">Home</NavDropdown.Item>
-              </Link>
-              <NavDropdown.Divider />
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
-            </NavDropdown>
+          <div className="search-nav">
+            <Link to="/search">
+              <Button variant="link" style={{ color: 'white' }}>
+                Search
+              </Button>
+            </Link>
+          </div>
+          <div className="logout-nav">
+            <Link to="/logout">
+              <Button variant="link" style={{ color: 'white' }}>
+                Logout
+              </Button>
+            </Link>
           </div>
         </Navbar>
       </div>
