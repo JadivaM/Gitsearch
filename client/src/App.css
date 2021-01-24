@@ -17,7 +17,7 @@
   background-image: url('wyncodeBackground.png');
 }
 
-.searchBackgroundImage {
+/* .searchBackgroundImage {
   background-image: url('octocat.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -25,7 +25,7 @@
   display: flex;
   justify-content: center;
   margin: auto;
-}
+} */
 
 .form {
   display: flex;
@@ -64,10 +64,11 @@
 
 .search-container {
   display: flex;
-  justify-content: center;
+  right: 0;
+  position: absolute;
   flex-direction: column;
-  width: 50%;
-  height: 900px;
+  width: 30%;
+  height: 700px;
   margin: auto;
   border: rgb(189, 185, 185) solid 1px;
   border-radius: 10%;
@@ -83,10 +84,37 @@
   width: 300;
   margin: auto;
 }
-/* 
-.card-img {
-  height: 200px;
-  width: 150px;
+
+.home-container {
+  width: 100%;
+  height: 1000px;
   display: flex;
-  justify-content: center;
-}  */
+  flex-direction: row;
+}
+
+.profile-container {
+  width: 50%;
+  height: 700px;
+  border: rgba(117, 117, 117, 0.609) solid 1px;
+  margin-left: 100px;
+}
+
+.cover-photo-img {
+  width: 100%;
+  border: purple solid 1px;
+  background-image: url('octocat.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.profile-avatar {
+  background-image: url('default-user-icon.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  border: rgba(100, 100, 102, 0.657) solid 1px;
+  border-radius: 50%;
+  margin-left: 50px;
+  margin-top: 50px;
+}
