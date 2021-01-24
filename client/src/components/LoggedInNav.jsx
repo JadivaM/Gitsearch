@@ -8,7 +8,9 @@ const LoggedInNav = () => {
       <div className="nav-container">
         <Navbar bg="dark" variant="dark" className="navbar">
           <div className="loggedin-nav-title">
-            <Navbar.Brand href="#home">Wynhub</Navbar.Brand>
+            <Link to="/">
+              <Navbar.Brand>Wynhub</Navbar.Brand>
+            </Link>
           </div>
           <div className="search-nav">
             <Link to="/search">
