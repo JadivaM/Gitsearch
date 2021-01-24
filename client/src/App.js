@@ -16,7 +16,7 @@ const App = () => {
           <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute exact path="/" component={Home} />
-          <Route exact path="/search" component={SearchPage} />
+          <PrivateRoute exact path="/search" component={SearchPage} />
         </Switch>
       </BrowserRouter>
     </AppContextProvider>

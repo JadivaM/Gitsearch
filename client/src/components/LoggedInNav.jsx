@@ -23,7 +23,6 @@ const LoggedInNav = () => {
                 <NavDropdown.Item href="#action/3.2">Home</NavDropdown.Item>
               </Link>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.1">Settings</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>
             </NavDropdown>
