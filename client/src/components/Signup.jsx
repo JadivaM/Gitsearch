@@ -18,7 +18,7 @@ const Signup = ({ history }) => {
       const response = await axios.post('/signup', formData);
       sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data);
-      history.push('/');
+      history.push('/login');
     } catch (error) {
       console.log('Signup error:', error);
     }
