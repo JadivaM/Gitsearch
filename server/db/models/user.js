@@ -2,8 +2,7 @@ const mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   validator = require('validator'),
   bcrypt = require('bcryptjs'),
-  jwt = require('jsonwebtoken'),
-  SavedUser = require('./savedUser');
+  jwt = require('jsonwebtoken');
 
 const userSchema = new Schema(
   {
@@ -50,12 +49,6 @@ const userSchema = new Schema(
     timestamps: true
   }
 );
-
-userSchema.virtual('savedUsers', {
-  ref: 'SavedUser',
-  localField: '_id',
-  foreignField: 'owner'
-});
 
 userSchema.methods.toJSON = function () {
   const user = this;
