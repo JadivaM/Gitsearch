@@ -2,7 +2,8 @@ const mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   validator = require('validator'),
   bcrypt = require('bcryptjs'),
-  jwt = require('jsonwebtoken');
+  jwt = require('jsonwebtoken'),
+  SavedUser = require('./savedUser');
 
 const userSchema = new Schema(
   {
@@ -50,6 +51,12 @@ const userSchema = new Schema(
   }
 );
 
+userSchema.virtual('savedUsers', {
+  ref: 'SavedUser',
+  localField: '_id',
+  foreignField: 'owner'
+});
+
 userSchema.methods.toJSON = function () {
   const user = this;
   const userObject = user.toObject();
@@ -85,6 +92,14 @@ userSchema.pre('save', async function (next) {
   if (user.isModified('password'))
     user.password = await bcrypt.hash(user.password, 8);
 
+  next();
+});
+
+userSchema.pre('remove', async function (next) {
+  const user = this;
+  await SavedUser.deleteMany({
+    owner: user._id
+  });
   next();
 });
 
