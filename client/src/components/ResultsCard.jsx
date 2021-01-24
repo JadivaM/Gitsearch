@@ -2,6 +2,16 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 
 const ResultsCard = ({ users }) => {
+  const handleSave = async () => {
+    fetch(`https://api.github.com/user/following/${users.login}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Length': 0,
+        Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
+      }
+    });
+  };
+
   return (
     <>
       <Card style={{ width: 310 }}>
@@ -30,7 +40,11 @@ const ResultsCard = ({ users }) => {
           <a href={users.html_url}>
             <Button variant="primary">View profile</Button>
           </a>
-          <Button variant="primary" style={{ marginLeft: 35 }}>
+          <Button
+            variant="primary"
+            style={{ marginLeft: 35 }}
+            onClick={handleSave}
+          >
             Save User
           </Button>
         </Card.Body>
