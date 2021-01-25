@@ -1,38 +1,39 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const ResultsCard = ({ users }) => {
-  const [githubUserData, setGithubUserData] = useState(null);
-
   const handleSave = async () => {
-    fetch(`https://api.github.com/user/following/${users.login}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Length': 0,
-        Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
-      }
-    });
-    await axios({
-      method: 'POST',
-      url: '/api/githubdata',
-      withCredentials: true,
-      data: users,
-      body: JSON.stringify({
-        avatar_url: users.avatar_url,
-        name: users.name,
-        login: users.login,
-        html_url: users.html_url,
-        repos_url: users.repos_url
-      })
-    })
-      .then((res) => {
-        setGithubUserData(res);
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
+    try {
+      fetch(`https://api.github.com/user/following/${users.login}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Length': 0,
+          Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
+        }
       });
+      await axios({
+        method: 'POST',
+        url: '/api/githubdata',
+        withCredentials: true,
+        data: users,
+        body: JSON.stringify({
+          avatar_url: users.avatar_url,
+          name: users.name,
+          login: users.login,
+          html_url: users.html_url,
+          repos_url: users.repos_url
+        })
+      });
+      swal(
+        'Saved to profile!',
+        `You are now following ${users.login} on Github!`,
+        'success'
+      );
+    } catch (err) {
+      swal('Error', 'Something went wrong.', 'error');
+    }
   };
 
   return (
@@ -61,10 +62,10 @@ const ResultsCard = ({ users }) => {
           <Card.Text>Profile URL: {users.html_url}</Card.Text>
           <Card.Text>Repos URL: {users.repos_url}</Card.Text>
           <a href={users.html_url}>
-            <Button variant="primary">View profile</Button>
+            <Button variant="outline-primary">View profile</Button>
           </a>
           <Button
-            variant="primary"
+            variant="outline-success"
             style={{ marginLeft: 35 }}
             onClick={handleSave}
           >
