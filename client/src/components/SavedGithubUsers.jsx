@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import DeleteButton from './DeleteButton';
+import swal from 'sweetalert';
 
 const SavedGithubUsers = () => {
   const [githubUserData, setGithubUserData] = useState(null);
@@ -11,11 +12,12 @@ const SavedGithubUsers = () => {
         return data.json();
       })
       .then((res) => {
-        console.log(res);
         setGithubUserData(res);
       })
       .catch((err) => {
-        console.log(err);
+        if (err) {
+          swal('Error', 'Something went wrong.', 'error');
+        }
       });
   }, []);
 
