@@ -17,11 +17,12 @@
   background-image: url('wyncodeBackground.png');
 }
 
-.searchBackgroundImage {
+.search-background-img {
   background-image: url('octocat.png');
   background-size: contain;
   background-repeat: no-repeat;
   width: 95%;
+  height: 900px;
   display: flex;
   justify-content: center;
   margin: auto;
@@ -50,13 +51,20 @@
   text-align: center;
 }
 
-.search-nav {
+.home-nav {
   width: 250px;
   right: 0;
   position: absolute;
   padding: 20px;
 }
-.dropdown-nav {
+
+.search-nav {
+  width: 180px;
+  right: 0;
+  position: absolute;
+  padding: 20px;
+}
+.logout-nav {
   right: 0;
   position: absolute;
   margin-right: 15px;
@@ -65,14 +73,15 @@
 .search-container {
   display: flex;
   justify-content: center;
+
   flex-direction: column;
-  width: 50%;
-  height: 900px;
+  width: 40%;
+  height: 700px;
   margin: auto;
   border: rgb(189, 185, 185) solid 1px;
   border-radius: 10%;
-  background-color: rgba(255, 255, 255, 0.781);
-  margin-top: 0;
+  background-color: rgba(255, 255, 255, 0.835);
+  margin-top: 100px;
 }
 
 .search-bar,
@@ -83,10 +92,43 @@
   width: 300;
   margin: auto;
 }
-/* 
-.card-img {
-  height: 200px;
-  width: 150px;
+
+.home-container {
+  width: 80%;
+  height: 1000px;
   display: flex;
   justify-content: center;
-}  */
+  margin: auto;
+}
+
+.profile-container {
+  width: 80%;
+  height: 100vh;
+  border: rgba(117, 117, 117, 0.609) solid 1px;
+  background-color: white;
+}
+
+.cover-photo-img {
+  width: 100%;
+  border: purple solid 1px;
+  background-image: url('octocat.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.profile-avatar {
+  background-image: url('default-user-icon.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 200px;
+  border: rgba(100, 100, 102, 0.657) solid 1px;
+  border-radius: 50%;
+  margin-left: 50px;
+  margin-top: 50px;
+}
+.profile-saved-users {
+  border: rgba(117, 117, 117, 0.609) solid 1px;
+  width: 100%;
+  height: 100vh;
+}

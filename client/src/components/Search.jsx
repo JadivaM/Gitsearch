@@ -27,10 +27,10 @@ const Search = () => {
   return (
     <>
       <div className="search-container">
-        <h1 style={{ textAlign: 'center', paddingTop: 20 }}>
+        <h2 style={{ textAlign: 'center', paddingTop: 20 }}>
           Search for a Github user
-        </h1>
-        <div className="search-bar">
+        </h2>
+        <div className="search-bar" style={{ marginTop: 0 }}>
           <Form inline onSubmit={handleSubmit}>
             <FormControl
               size="lg"

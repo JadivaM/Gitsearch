@@ -5,6 +5,7 @@ const express = require('express'),
   cookieParser = require('cookie-parser'),
   userRouter = require('./routes/secure/users'),
   passport = require('./middleware/authentication/index'),
+  githubDataRouter = require('./routes/secure/githubData'),
   openRoutes = require('./routes/open');
 
 const app = express();
@@ -29,6 +30,7 @@ app.use('/api/*', passport.authenticate('jwt', { session: false }));
 //Authenticated routes
 
 app.use('/api/users', userRouter);
+app.use('/api/githubdata', githubDataRouter);
 
 // Handle React routing, return all requests to React app
 if (process.env.NODE_ENV === 'production') {

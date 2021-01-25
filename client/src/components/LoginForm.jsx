@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 
-const LoginForm = ({ history }) => {
+const LoginForm = () => {
   const [formData, setFormData] = useState(null);
   const { setCurrentUser } = useContext(AppContext);
+  const history = useHistory();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,7 +20,7 @@ const LoginForm = ({ history }) => {
       const response = await axios.post('/login', formData);
       setCurrentUser(response.data);
       sessionStorage.setItem('user', response.data);
-      history.push('/home');
+      history.push('/');
     } catch (error) {
       console.log('Login Error: ', error);
     }
@@ -59,9 +61,14 @@ const LoginForm = ({ history }) => {
               </Button>
             </Form.Group>
           </Form>
-          <Link to="/" style={{ marginLeft: 60 }}>
+          <Link to="/" style={{ marginLeft: 50 }}>
             Don't have an account yet? Sign up
           </Link>
+          <div>
+            <Link to="/resetpassword" style={{ marginLeft: 130 }}>
+              Forgot password
+            </Link>
+          </div>
         </Container>
       </div>
     </>
