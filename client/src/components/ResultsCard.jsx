@@ -56,10 +56,10 @@ const ResultsCard = ({ users }) => {
           <Card.Text>Profile URL: {users.html_url}</Card.Text>
           <Card.Text>Repos URL: {users.repos_url}</Card.Text>
           <a href={users.html_url}>
-            <Button variant="primary">View profile</Button>
+            <Button variant="outline-primary">View profile</Button>
           </a>
           <Button
-            variant="primary"
+            variant="outline-success"
             style={{ marginLeft: 35 }}
             onClick={handleSave}
           >
