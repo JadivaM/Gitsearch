@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import { AppContext } from '../context/AppContext';
+import swal from 'sweetalert';
 
 const DeleteButton = ({ githubUserData }) => {
   const { setLoading } = useContext(AppContext);
@@ -20,8 +21,13 @@ const DeleteButton = ({ githubUserData }) => {
         url: `/api/githubdata/${githubUserData._id}`,
         withCredentials: true
       });
+      swal(
+        'Removed from profile!',
+        `You are no longer following ${githubUserData.login} on Github`,
+        'success'
+      );
     } catch (err) {
-      console.log(err);
+      swal('Error', 'Something went wrong.', 'error');
     }
   };
 
