@@ -14,7 +14,6 @@ const UpdatePassword = ({ history }) => {
     e.preventDefault();
     if (password.password !== password.confirmPassword) {
       throw Error('Error', 'Passwords do not match.');
-      return;
     }
     await axios.put(
       '/api/users/password',
