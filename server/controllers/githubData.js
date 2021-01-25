@@ -1,9 +1,6 @@
 const mongoose = require('mongoose'),
   GithubData = require('../db/models/githubData');
 
-// ***********************************************//
-// Create a task
-// ***********************************************//
 exports.createGithubData = async (req, res) => {
   const githubData = await new GithubData({
     ...req.body,
@@ -17,13 +14,6 @@ exports.createGithubData = async (req, res) => {
   }
 };
 
-// ***********************************************//
-// Get all tasks
-// /tasks?completed=true
-// /tasks?limit=10&skip=10
-// /tasks?sortBy=createdAt:asc
-// /tasks?sortBy=dueDate:desc
-// ***********************************************//
 exports.getAllGithubData = async (req, res) => {
   const match = {},
     sort = {};
@@ -52,9 +42,6 @@ exports.getAllGithubData = async (req, res) => {
   }
 };
 
-// ***********************************************//
-// Delete a task
-// ***********************************************//
 exports.deleteGithubData = async (req, res) => {
   try {
     const githubData = await GithubData.findOneAndDelete({
