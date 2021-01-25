@@ -2,7 +2,8 @@ const mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   validator = require('validator'),
   bcrypt = require('bcryptjs'),
-  jwt = require('jsonwebtoken');
+  jwt = require('jsonwebtoken'),
+  GithubData = require('./githubData');
 
 const userSchema = new Schema(
   {
@@ -50,6 +51,12 @@ const userSchema = new Schema(
   }
 );
 
+userSchema.virtual('githubData', {
+  ref: 'GithubData',
+  localField: '_id',
+  foreignField: 'owner'
+});
+
 userSchema.methods.toJSON = function () {
   const user = this;
   const userObject = user.toObject();
@@ -90,7 +97,7 @@ userSchema.pre('save', async function (next) {
 
 userSchema.pre('remove', async function (next) {
   const user = this;
-  await SavedUser.deleteMany({
+  await GithubData.deleteMany({
     owner: user._id
   });
   next();
