@@ -1,38 +1,33 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 const ResultsCard = ({ users }) => {
-  const [githubUserData, setGithubUserData] = useState(null);
-
   const handleSave = async () => {
-    fetch(`https://api.github.com/user/following/${users.login}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Length': 0,
-        Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
-      }
-    });
-    await axios({
-      method: 'POST',
-      url: '/api/githubdata',
-      withCredentials: true,
-      data: users,
-      body: JSON.stringify({
-        avatar_url: users.avatar_url,
-        name: users.name,
-        login: users.login,
-        html_url: users.html_url,
-        repos_url: users.repos_url
-      })
-    })
-      .then((res) => {
-        setGithubUserData(res);
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
+    try {
+      fetch(`https://api.github.com/user/following/${users.login}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Length': 0,
+          Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
+        }
       });
+      await axios({
+        method: 'POST',
+        url: '/api/githubdata',
+        withCredentials: true,
+        data: users,
+        body: JSON.stringify({
+          avatar_url: users.avatar_url,
+          name: users.name,
+          login: users.login,
+          html_url: users.html_url,
+          repos_url: users.repos_url
+        })
+      });
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
