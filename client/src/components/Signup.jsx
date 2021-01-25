@@ -1,14 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 
-const Signup = () => {
+const Signup = ({ history }) => {
   const { setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState(null);
-  const history = useHistory();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,11 +16,11 @@ const Signup = () => {
     e.preventDefault();
     try {
       const response = await axios.post('/signup', formData);
-      sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data);
+      sessionStorage.setItem('user', response.data);
       history.push('/login');
     } catch (error) {
-      console.log('Signup error:', error);
+      console.log('Signup error:', error.toString());
     }
   };
 
