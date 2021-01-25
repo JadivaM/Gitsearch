@@ -2,9 +2,6 @@ const mongoose = require('mongoose');
 
 const githubDataSchema = new mongoose.Schema(
   {
-    githubUserData: {
-      type: String
-    },
     avatar_url: {
       type: String
     },
