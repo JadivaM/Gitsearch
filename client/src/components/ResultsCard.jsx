@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const ResultsCard = ({ users }) => {
   const handleSave = async () => {
@@ -25,8 +26,13 @@ const ResultsCard = ({ users }) => {
           repos_url: users.repos_url
         })
       });
+      swal(
+        'Saved to profile!',
+        `You are now following ${users.login} on Github!`,
+        'success'
+      );
     } catch (err) {
-      console.log(err);
+      swal('Error', 'Something went wrong.', 'error');
     }
   };
 
