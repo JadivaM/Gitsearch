@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from 'react-bootstrap';
 import axios from 'axios';
-import { AppContext } from '../context/AppContext';
 import swal from 'sweetalert';
 
 const DeleteButton = ({ githubUserData }) => {
-  const { setLoading } = useContext(AppContext);
-
   const handleRemove = async () => {
     try {
       fetch(`https://api.github.com/user/following/${githubUserData.login}`, {
@@ -30,18 +27,6 @@ const DeleteButton = ({ githubUserData }) => {
       swal('Error', 'Something went wrong.', 'error');
     }
   };
-
-  //   const handleRemove = async () => {
-  //     try {
-  //       await axios({
-  //         method: 'DELETE',
-  //         url: `/api/githubdata/${id}`,
-  //         withCredentials: true
-  //       });
-  //     } catch (err) {
-  //       console.log(err);
-  //     }
-  //   };
 
   return (
     <Button
