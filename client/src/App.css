@@ -2,7 +2,6 @@
 .loginBackgroundImage {
   background-size: contain;
   background-repeat: no-repeat;
-  width: 80%;
   height: 1000px;
   display: flex;
   justify-content: center;
@@ -11,10 +10,12 @@
 
 .homeBackgroundImage {
   background-image: url('githublogo.png');
+  width: 80%;
 }
 
 .loginBackgroundImage {
-  background-image: url('wyncodeBackground.png');
+  background-image: url('githubStickers.png');
+  width: 90%;
 }
 
 .search-background-img {
