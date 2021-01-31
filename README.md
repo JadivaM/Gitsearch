@@ -1,6 +1,6 @@
-# TA Assessment
+# Gitsearch
 
-- This assessment requires communicating with the Github API making requests to search for users, save them to the database, when saving a user you will follow the saved user on Github, display all saved users on the users profile, and also unfollow the github user on github. To style various components React Bootstrap was used including the navigation bar and cards that render the user information and Sweet Alert to show success and error alerts.
+- This project entailed communicating with the Github API making requests to search for users, save them to the database, when saving a user you will follow the saved user on Github, display all saved users on the users profile, and also unfollow the github user on github. To style various components React Bootstrap was used including the navigation bar and cards that render the user information and Sweet Alert to show success and error alerts.
 
 ## How to use
 
