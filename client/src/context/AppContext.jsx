@@ -25,7 +25,7 @@ const AppContextProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={(currentUser, setCurrentUser, loading, setLoading)}
+      value={{ currentUser, setCurrentUser, loading, setLoading }}
     >
       {children}
     </AppContext.Provider>
