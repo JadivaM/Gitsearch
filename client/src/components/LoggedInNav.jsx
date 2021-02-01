@@ -29,7 +29,7 @@ const LoggedInNav = () => {
         <Navbar bg="dark" variant="dark" className="navbar">
           <div className="loggedin-nav-title">
             <Link to="/">
-              <Navbar.Brand>Wynhub</Navbar.Brand>
+              <Navbar.Brand>Gitsearch</Navbar.Brand>
             </Link>
           </div>
           <div className="home-nav">
