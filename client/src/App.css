@@ -2,7 +2,6 @@
 .loginBackgroundImage {
   background-size: contain;
   background-repeat: no-repeat;
-  width: 80%;
   height: 1000px;
   display: flex;
   justify-content: center;
@@ -10,11 +9,13 @@
 }
 
 .homeBackgroundImage {
-  background-image: url('wyncodeBase.png');
+  background-image: url('githublogo.png');
+  width: 80%;
 }
 
 .loginBackgroundImage {
-  background-image: url('wyncodeBackground.png');
+  background-image: url('githubStickers.png');
+  width: 90%;
 }
 
 .search-background-img {
@@ -126,12 +127,14 @@
   margin-top: 50px;
 }
 .profile-saved-users {
-  width: 100%;
-  height: 100vh;
+  height: fit-content;
+  border: rgb(226, 223, 223) 1px solid;
+  border-radius: 5%;
 }
 
 .githubUserData-cards {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding: 5px;
 }

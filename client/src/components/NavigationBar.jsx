@@ -9,7 +9,7 @@ const NavigationBar = () => {
           href="#home"
           style={{ width: '100%', textAlign: 'center' }}
         >
-          Wynhub
+          Gitsearch
         </Navbar.Brand>
       </Navbar>
     </div>
