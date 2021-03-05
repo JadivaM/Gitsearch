@@ -1,3 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.welcome-page-hero-image-container {
+  background-image: url(./images/3d-computer-art.png);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  /* background: rgb(183,114,105);
+  background: linear-gradient(90deg, rgba(183,114,105,1) 0%, rgba(26,60,72,1) 50%); */
+}
+
+/* .welcome-page-hero-image-container-image {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+} */
+
+.welcome-page-hero-image-container-text {
+}
+
 .homeBackgroundImage,
 .loginBackgroundImage {
   background-size: contain;
