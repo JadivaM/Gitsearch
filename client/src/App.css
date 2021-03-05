@@ -8,19 +8,19 @@ body {
   background-size: cover;
   width: 100vw;
   height: 100vh;
-  /* background: rgb(183,114,105);
-  background: linear-gradient(90deg, rgba(183,114,105,1) 0%, rgba(26,60,72,1) 50%); */
 }
 
-/* .welcome-page-hero-image-container-image {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  position: absolute;
-  right: 0;
-} */
-
 .welcome-page-hero-image-container-text {
+}
+
+.navbar-title {
+  border: black 2px solid;
+  width: fit-content;
+  padding: 0.5%;
+}
+
+.navbar-container {
+  display: flex;
 }
 
 .homeBackgroundImage,

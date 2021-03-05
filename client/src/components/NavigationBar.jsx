@@ -1,15 +1,17 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Button } from 'react-bootstrap';
 
 const NavigationBar = () => {
   return (
     <div>
-      <Navbar bg="dark" variant="dark">
+      <Navbar>
         <Navbar.Brand
           href="#home"
-          style={{ width: '100%', textAlign: 'center' }}
+          style={{ width: '100%', backgroundColor: 'transparent' }}
         >
-          Gitsearch
+          <div className="navbar-container">
+            <h3 className="navbar-title">Gitsearch</h3>
+          </div>
         </Navbar.Brand>
       </Navbar>
     </div>
