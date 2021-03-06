@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import SignUpPage from './pages/SignUpPage';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
+import WelcomePage from './pages/WelcomePage';
 import Home from './pages/Home';
 import SearchPage from './pages/SearchPage';
 import ResetPassword from './pages/ResetPassword';
@@ -15,6 +16,7 @@ const App = () => {
     <AppContextProvider>
       <BrowserRouter>
         <Switch>
+          <Route exact path="/welcome" component={WelcomePage} />
           <Route exact path="/signup" component={SignUpPage} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/resetpassword" component={ResetPassword} />
