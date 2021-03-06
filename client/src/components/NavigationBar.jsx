@@ -1,16 +1,16 @@
 import React from 'react';
-import { Navbar, Button } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const NavigationBar = () => {
   return (
     <div>
       <Navbar>
-        <Navbar.Brand
-          href="#home"
-          style={{ width: '100%', backgroundColor: 'transparent' }}
-        >
+        <Navbar.Brand style={{ width: '100%', backgroundColor: 'transparent' }}>
           <div className="navbar-container">
-            <h3 className="navbar-title">Gitsearch</h3>
+            <Link to="/welcome">
+              <h3 className="navbar-title">Gitsearch</h3>
+            </Link>
           </div>
         </Navbar.Brand>
       </Navbar>
