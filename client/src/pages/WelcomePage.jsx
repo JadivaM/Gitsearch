@@ -17,7 +17,6 @@ const WelcomePage = () => {
           </h5>
           <Link to="/login">
             <Button
-              variant="link"
               style={{
                 color: 'white',
                 backgroundColor: '#0f3c49',

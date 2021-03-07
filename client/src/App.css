@@ -27,13 +27,12 @@ body {
   border: black 2px solid;
   width: fit-content;
   padding: 0.5%;
+  color: black;
 }
 
 .navbar-container {
   padding-left: 1%;
 }
-
-/* //.homeBackgroundImage, */
 
 .loginBackgroundImage {
   background-size: contain;

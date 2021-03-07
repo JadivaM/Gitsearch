@@ -8,7 +8,7 @@ const NavigationBar = () => {
       <Navbar>
         <Navbar.Brand style={{ width: '100%', backgroundColor: 'transparent' }}>
           <div className="navbar-container">
-            <Link to="/welcome">
+            <Link to="/welcome" style={{ textDecoration: 'none' }}>
               <h3 className="navbar-title">Gitsearch</h3>
             </Link>
           </div>
