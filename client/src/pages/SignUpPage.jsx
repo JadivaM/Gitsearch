@@ -26,8 +26,8 @@ const SignUp = ({ history }) => {
   };
   return (
     <>
-      <NavigationBar />
       <div className="homeBackgroundImage">
+        <NavigationBar />
         <div className="main-container">
           <Container
             className="form-container"
@@ -38,14 +38,14 @@ const SignUp = ({ history }) => {
               style={{ width: 300 }}
               onSubmit={handleSignUp}
             >
-              <h2 style={{ textAlign: 'center' }}>Get started</h2>
-              <p>Search, save, and follow Github users all in one place.</p>
+              <h2 style={{ color: '#0f3c49', fontSize: '3rem' }}>
+                Get started
+              </h2>
               <Form.Group>
                 <Form.Label htmlFor="name">Name</Form.Label>
                 <Form.Control
                   id="name"
                   type="text"
-                  placeholder="Full Name"
                   name="name"
                   onChange={handleChange}
                 />
@@ -55,7 +55,6 @@ const SignUp = ({ history }) => {
                 <Form.Control
                   id="email"
                   type="email"
-                  placeholder="Email Address"
                   name="email"
                   onChange={handleChange}
                 />
@@ -65,18 +64,26 @@ const SignUp = ({ history }) => {
                 <Form.Control
                   id="password"
                   type="password"
-                  placeholder="Password"
                   name="password"
                   onChange={handleChange}
                 />
               </Form.Group>
               <Form.Group className="d-flex justify-content-center">
-                <Button variant="outline-primary" type="submit" size="lg" block>
+                <Button
+                  style={{
+                    color: 'white',
+                    backgroundColor: '#0f3c49',
+                    border: 'none'
+                  }}
+                  type="submit"
+                  size="lg"
+                  block
+                >
                   Sign up
                 </Button>
               </Form.Group>
             </Form>
-            <Link to="/login" style={{ marginLeft: 60 }}>
+            <Link to="/login" style={{ marginLeft: 60, color: 'black' }}>
               Already have an account? Login
             </Link>
           </Container>
