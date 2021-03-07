@@ -23,7 +23,8 @@ const WelcomePage = () => {
                 border: 'none',
                 width: 100,
                 marginRight: 40,
-                marginTop: 20
+                marginTop: 20,
+                boxShadow: 'none'
               }}
             >
               Log in
@@ -36,7 +37,8 @@ const WelcomePage = () => {
                 backgroundColor: '#0f3c49',
                 border: 'none',
                 width: 100,
-                marginTop: 20
+                marginTop: 20,
+                boxShadow: 'none'
               }}
             >
               Sign up

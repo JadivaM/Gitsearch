@@ -80,7 +80,8 @@ const SignUp = ({ history }) => {
                   style={{
                     color: 'white',
                     backgroundColor: '#0f3c49',
-                    border: 'none'
+                    border: 'none',
+                    boxShadow: 'none'
                   }}
                   type="submit"
                   size="lg"
