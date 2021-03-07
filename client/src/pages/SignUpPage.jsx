@@ -71,6 +71,9 @@ const SignUp = ({ history }) => {
                   name="password"
                   onChange={handleChange}
                 />
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Your password must be longer than 6 characters.
+                </small>
               </Form.Group>
               <Form.Group className="d-flex justify-content-center">
                 <Button
