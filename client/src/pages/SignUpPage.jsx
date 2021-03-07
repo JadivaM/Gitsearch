@@ -34,16 +34,18 @@ const SignUp = ({ history }) => {
             style={{ backgroundColor: 'white', width: 400, height: 500 }}
           >
             <Form
+              autoComplete="off"
               className="form"
               style={{ width: 300 }}
               onSubmit={handleSignUp}
             >
-              <h2 style={{ color: '#0f3c49', fontSize: '3rem' }}>
+              <h1 style={{ color: '#0f3c49', fontSize: '3rem' }}>
                 Get started
-              </h2>
+              </h1>
               <Form.Group>
                 <Form.Label htmlFor="name">Name</Form.Label>
                 <Form.Control
+                  style={{ boxShadow: 'none' }}
                   id="name"
                   type="text"
                   name="name"
@@ -53,6 +55,7 @@ const SignUp = ({ history }) => {
               <Form.Group>
                 <Form.Label htmlFor="email">Email Address</Form.Label>
                 <Form.Control
+                  style={{ boxShadow: 'none' }}
                   id="email"
                   type="email"
                   name="email"
@@ -62,6 +65,7 @@ const SignUp = ({ history }) => {
               <Form.Group>
                 <Form.Label htmlFor="password">Password</Form.Label>
                 <Form.Control
+                  style={{ boxShadow: 'none' }}
                   id="password"
                   type="password"
                   name="password"
