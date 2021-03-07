@@ -79,7 +79,7 @@ const Login = ({ history }) => {
                 </Button>
               </Form.Group>
             </Form>
-            <Link to="/" style={{ marginLeft: 50, color: 'black' }}>
+            <Link to="/signup" style={{ marginLeft: 50, color: 'black' }}>
               Don't have an account yet? Sign up
             </Link>
             <div>
