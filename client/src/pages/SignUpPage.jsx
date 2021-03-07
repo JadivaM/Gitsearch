@@ -26,26 +26,28 @@ const SignUp = ({ history }) => {
   };
   return (
     <>
-      <NavigationBar />
       <div className="homeBackgroundImage">
+        <NavigationBar />
         <div className="main-container">
           <Container
             className="form-container"
             style={{ backgroundColor: 'white', width: 400, height: 500 }}
           >
             <Form
+              autoComplete="off"
               className="form"
               style={{ width: 300 }}
               onSubmit={handleSignUp}
             >
-              <h2 style={{ textAlign: 'center' }}>Get started</h2>
-              <p>Search, save, and follow Github users all in one place.</p>
+              <h1 style={{ color: '#0f3c49', fontSize: '3rem' }}>
+                Get started
+              </h1>
               <Form.Group>
                 <Form.Label htmlFor="name">Name</Form.Label>
                 <Form.Control
+                  style={{ boxShadow: 'none' }}
                   id="name"
                   type="text"
-                  placeholder="Full Name"
                   name="name"
                   onChange={handleChange}
                 />
@@ -53,9 +55,9 @@ const SignUp = ({ history }) => {
               <Form.Group>
                 <Form.Label htmlFor="email">Email Address</Form.Label>
                 <Form.Control
+                  style={{ boxShadow: 'none' }}
                   id="email"
                   type="email"
-                  placeholder="Email Address"
                   name="email"
                   onChange={handleChange}
                 />
@@ -63,20 +65,33 @@ const SignUp = ({ history }) => {
               <Form.Group>
                 <Form.Label htmlFor="password">Password</Form.Label>
                 <Form.Control
+                  style={{ boxShadow: 'none' }}
                   id="password"
                   type="password"
-                  placeholder="Password"
                   name="password"
                   onChange={handleChange}
                 />
+                <small id="passwordHelpBlock" class="form-text text-muted">
+                  Your password must be longer than 6 characters.
+                </small>
               </Form.Group>
               <Form.Group className="d-flex justify-content-center">
-                <Button variant="outline-primary" type="submit" size="lg" block>
+                <Button
+                  style={{
+                    color: 'white',
+                    backgroundColor: '#0f3c49',
+                    border: 'none',
+                    boxShadow: 'none'
+                  }}
+                  type="submit"
+                  size="lg"
+                  block
+                >
                   Sign up
                 </Button>
               </Form.Group>
             </Form>
-            <Link to="/login" style={{ marginLeft: 60 }}>
+            <Link to="/login" style={{ marginLeft: 60, color: 'black' }}>
               Already have an account? Login
             </Link>
           </Container>

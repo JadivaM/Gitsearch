@@ -27,13 +27,13 @@ body {
   border: black 2px solid;
   width: fit-content;
   padding: 0.5%;
+  color: black;
 }
 
 .navbar-container {
   padding-left: 1%;
 }
 
-.homeBackgroundImage,
 .loginBackgroundImage {
   background-size: contain;
   background-repeat: no-repeat;
@@ -44,8 +44,12 @@ body {
 }
 
 .homeBackgroundImage {
-  background-image: url('githublogo.png');
-  width: 80%;
+  background-image: url('./images/computer-setup.png');
+  width: 60vw;
+  height: 100vh;
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .loginBackgroundImage {
@@ -77,9 +81,9 @@ body {
 }
 
 .form-container {
-  border: rgb(189, 185, 185) solid 1px;
-  border-radius: 10%;
-  padding-top: 20px;
+  position: absolute;
+  top: 20%;
+  right: 5%;
 }
 
 .loggedin-nav-title {
