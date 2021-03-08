@@ -25,38 +25,53 @@ const LoggedInNav = () => {
   };
   return (
     <>
-      <div className="nav-container">
-        <Navbar bg="dark" variant="dark" className="navbar">
-          <div className="loggedin-nav-title">
-            <Link to="/">
-              <Navbar.Brand>Gitsearch</Navbar.Brand>
-            </Link>
-          </div>
-          <div className="home-nav">
-            <Link to="/">
-              <Button variant="link" style={{ color: 'white' }}>
-                Home
-              </Button>
-            </Link>
-          </div>
-          <div className="search-nav">
-            <Link to="/search">
-              <Button variant="link" style={{ color: 'white' }}>
-                Search
-              </Button>
-            </Link>
-          </div>
-          <div className="logout-nav">
-            <Link to="/logout">
-              <Button
-                variant="link"
-                style={{ color: 'white' }}
-                onClick={handleSignOut}
-              >
-                Logout
-              </Button>
-            </Link>
-          </div>
+      <div>
+        <Navbar>
+          <Navbar.Brand
+            style={{ width: '100%', backgroundColor: 'transparent' }}
+          >
+            <div className="navbar-container-logged-in">
+              <Link to="/welcome" style={{ textDecoration: 'none' }}>
+                <h3 className="navbar-title">Gitsearch</h3>
+              </Link>
+              <div className="navbar-search-logout-container">
+                <div className="navbar-profile-link">
+                  <Link
+                    to="/"
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <p>My profile</p>
+                  </Link>
+                </div>
+                <div className="navbar-search-link">
+                  <Link
+                    to="/search"
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <p>Search</p>
+                  </Link>
+                </div>
+                <div className="navbar-logout">
+                  <Link
+                    to="/logout"
+                    style={{ textDecoration: 'none', color: 'black' }}
+                  >
+                    <Button
+                      onClick={handleSignOut}
+                      style={{
+                        backgroundColor: '#0f3c49',
+                        color: 'white',
+                        border: 'none',
+                        boxShadow: 'none'
+                      }}
+                    >
+                      Logout
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </Navbar.Brand>
         </Navbar>
       </div>
     </>

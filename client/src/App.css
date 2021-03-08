@@ -30,8 +30,21 @@ body {
   color: black;
 }
 
-.navbar-container {
+.navbar-container,
+.navbar-container-logged-in {
   padding-left: 1%;
+}
+
+.navbar-container-logged-in {
+  display: flex;
+}
+
+.navbar-search-logout-container {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  position: absolute;
+  right: 20px;
 }
 
 .homeBackgroundImage {
@@ -88,30 +101,6 @@ body {
   right: 5%;
 }
 
-.loggedin-nav-title {
-  width: 100%;
-  text-align: center;
-}
-
-.home-nav {
-  width: 250px;
-  right: 0;
-  position: absolute;
-  padding: 20px;
-}
-
-.search-nav {
-  width: 180px;
-  right: 0;
-  position: absolute;
-  padding: 20px;
-}
-.logout-nav {
-  right: 0;
-  position: absolute;
-  margin-right: 15px;
-}
-
 .reset-password-instructions-img {
   width: 20%;
   height: 20%;
@@ -120,7 +109,6 @@ body {
 .search-container {
   display: flex;
   justify-content: center;
-
   flex-direction: column;
   width: 40%;
   height: 700px;
