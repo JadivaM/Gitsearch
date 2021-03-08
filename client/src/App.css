@@ -63,6 +63,13 @@ body {
   margin: auto;
 }
 
+.reset-password-instructions {
+  width: 40%;
+  color: rgb(100, 100, 102);
+  font-size: 13px;
+  text-align: center;
+}
+
 .form {
   display: flex;
   justify-content: center;
@@ -103,6 +110,11 @@ body {
   right: 0;
   position: absolute;
   margin-right: 15px;
+}
+
+.reset-password-instructions-img {
+  width: 20%;
+  height: 20%;
 }
 
 .search-container {
