@@ -30,8 +30,21 @@ body {
   color: black;
 }
 
-.navbar-container {
+.navbar-container,
+.navbar-container-logged-in {
   padding-left: 1%;
+}
+
+.navbar-container-logged-in {
+  display: flex;
+}
+
+.navbar-search-logout-container {
+  display: flex;
+  justify-content: space-between;
+  width: 25%;
+  position: absolute;
+  right: 20px;
 }
 
 .homeBackgroundImage {
@@ -50,17 +63,6 @@ body {
   background-position: 40% 60%;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.search-background-img {
-  background-image: url('octocat.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 95%;
-  height: 900px;
-  display: flex;
-  justify-content: center;
-  margin: auto;
 }
 
 .reset-password-instructions {
@@ -88,30 +90,6 @@ body {
   right: 5%;
 }
 
-.loggedin-nav-title {
-  width: 100%;
-  text-align: center;
-}
-
-.home-nav {
-  width: 250px;
-  right: 0;
-  position: absolute;
-  padding: 20px;
-}
-
-.search-nav {
-  width: 180px;
-  right: 0;
-  position: absolute;
-  padding: 20px;
-}
-.logout-nav {
-  right: 0;
-  position: absolute;
-  margin-right: 15px;
-}
-
 .reset-password-instructions-img {
   width: 20%;
   height: 20%;
@@ -120,15 +98,11 @@ body {
 .search-container {
   display: flex;
   justify-content: center;
-
   flex-direction: column;
-  width: 40%;
-  height: 700px;
+  width: 50%;
+  height: 100%;
   margin: auto;
-  border: rgb(189, 185, 185) solid 1px;
   border-radius: 10%;
-  background-color: rgba(255, 255, 255, 0.835);
-  margin-top: 100px;
 }
 
 .search-bar,
