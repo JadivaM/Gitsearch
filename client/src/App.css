@@ -65,17 +65,6 @@ body {
   background-repeat: no-repeat;
 }
 
-.search-background-img {
-  background-image: url('octocat.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 95%;
-  height: 900px;
-  display: flex;
-  justify-content: center;
-  margin: auto;
-}
-
 .reset-password-instructions {
   width: 40%;
   color: rgb(100, 100, 102);
@@ -110,13 +99,10 @@ body {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 40%;
-  height: 700px;
+  width: 50%;
+  height: 100%;
   margin: auto;
-  border: rgb(189, 185, 185) solid 1px;
   border-radius: 10%;
-  background-color: rgba(255, 255, 255, 0.835);
-  margin-top: 100px;
 }
 
 .search-bar,

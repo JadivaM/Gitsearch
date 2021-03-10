@@ -27,9 +27,6 @@ const Search = () => {
   return (
     <>
       <div className="search-container">
-        <h2 style={{ textAlign: 'center', paddingTop: 20 }}>
-          Search for a Github user
-        </h2>
         <div className="search-bar" style={{ marginTop: 0 }}>
           <Form inline onSubmit={handleSubmit}>
             <FormControl
@@ -39,7 +36,14 @@ const Search = () => {
               placeholder="Search"
               className="mr-sm-2"
             />
-            <Button variant="primary" type="submit">
+            <Button
+              type="submit"
+              style={{
+                backgroundColor: '#0f3c49',
+                border: 'none',
+                boxShadow: 'none'
+              }}
+            >
               Search
             </Button>
           </Form>
