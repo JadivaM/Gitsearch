@@ -38,41 +38,58 @@ const ResultsCard = ({ users }) => {
 
   return (
     <>
-      <Card style={{ width: 310 }}>
-        <Card.Img
-          variant="top"
-          src={users.avatar_url}
-          style={{
-            height: 250,
-            width: 250,
-            display: 'flex',
-            justifyContent: 'center',
-            margin: 'auto',
-            paddingTop: 10
-          }}
-        />
-        <Card.Body>
-          <Card.Title style={{ textAlign: 'center' }}>{users.name}</Card.Title>
-          <Card.Subtitle
-            className="mb-2 text-muted"
-            style={{ textAlign: 'center' }}
-          >
-            {users.login}
-          </Card.Subtitle>
-          <Card.Text>Profile URL: {users.html_url}</Card.Text>
-          <Card.Text>Repos URL: {users.repos_url}</Card.Text>
-          <a href={users.html_url}>
-            <Button variant="outline-primary">View profile</Button>
-          </a>
-          <Button
-            variant="outline-success"
-            style={{ marginLeft: 35 }}
-            onClick={handleSave}
-          >
-            Save User
-          </Button>
-        </Card.Body>
-      </Card>
+      <div className="search-page-results">
+        <div className="search-page-results-information">
+          <Card style={{ width: 450, height: 500, border: 'none' }}>
+            <Card.Body
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+              }}
+            >
+              <Card.Title style={{ textAlign: 'center', fontSize: '2rem' }}>
+                {users.name}
+              </Card.Title>
+              <Card.Subtitle
+                className="mb-2 text-muted"
+                style={{ textAlign: 'center' }}
+              >
+                {users.login}
+              </Card.Subtitle>
+              <Card.Text>Profile: {users.html_url}</Card.Text>
+              <Card.Text>Repositories: {users.repos_url}</Card.Text>
+
+              <div className="search-page-results-buttons">
+                <a href={users.html_url}>
+                  <Button
+                    style={{
+                      backgroundColor: '#0f3c49',
+                      border: 'none',
+                      boxShadow: 'none'
+                    }}
+                  >
+                    View profile
+                  </Button>
+                </a>
+                <Button
+                  style={{
+                    backgroundColor: '#0f3c49',
+                    border: 'none',
+                    boxShadow: 'none'
+                  }}
+                  onClick={handleSave}
+                >
+                  Save User
+                </Button>
+              </div>
+            </Card.Body>
+          </Card>
+        </div>
+        <div className="search-page-results-image">
+          <img src={users.avatar_url} alt="Github user avatar" />
+        </div>
+      </div>
     </>
   );
 };

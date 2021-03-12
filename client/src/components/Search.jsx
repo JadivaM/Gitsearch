@@ -33,7 +33,7 @@ const Search = () => {
               size="lg"
               onChange={handleSearch}
               type="text"
-              placeholder="Search"
+              placeholder="Discover users"
               className="mr-sm-2"
             />
             <Button
