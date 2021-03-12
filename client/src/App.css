@@ -110,15 +110,16 @@ body {
 }
 
 .profile-container {
-  width: 80%;
+  width: 100vw;
   height: 100vh;
 }
 
 .cover-photo-img {
   width: 100%;
-  border: purple solid 1px;
+  height: 33%;
   border-radius: 5%/30%;
-  background-image: url('octocat.png');
+  background-position: center;
+  background-image: url('./images/githubarthearts.png');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -129,22 +130,20 @@ body {
   background-repeat: no-repeat;
   width: 200px;
   height: 200px;
-  border: rgba(100, 100, 102, 0.657) solid 1px;
   border-radius: 50%;
-  margin-left: 50px;
-  margin-top: 50px;
+  position: absolute;
+  margin-left: 5%;
+  margin-top: 2%;
 }
 .profile-saved-users {
   height: fit-content;
-  border: rgb(226, 223, 223) 1px solid;
-  border-radius: 5%;
 }
 
 .githubUserData-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   padding: 5px;
+  justify-content: space-evenly;
 }
 
 .search-page-results {
