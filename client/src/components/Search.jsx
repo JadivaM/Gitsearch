@@ -30,10 +30,11 @@ const Search = () => {
         <div className="search-bar" style={{ marginTop: 0 }}>
           <Form inline onSubmit={handleSubmit}>
             <FormControl
-              size="lg"
+              style={{
+                boxShadow: 'none'
+              }}
               onChange={handleSearch}
               type="text"
-              placeholder="Discover users"
               className="mr-sm-2"
             />
             <Button
