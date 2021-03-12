@@ -98,7 +98,6 @@ body {
 .search-bar {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   width: 300;
   margin: auto;
 }
@@ -154,7 +153,6 @@ body {
   justify-content: space-evenly;
   width: 75%;
   margin: auto;
-  padding: 5%;
 }
 .search-page-results-information {
   display: flex;
