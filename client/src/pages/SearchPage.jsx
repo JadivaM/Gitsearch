@@ -8,7 +8,9 @@ const SearchPage = () => {
       <div className="search-page-main-container">
         <LoggedInNav />
         <div className="title">
-          <h1 style={{ textAlign: 'center', paddingTop: 20, color: '#0f3c49' }}>
+          <h1
+            style={{ textAlign: 'center', paddingTop: 20, paddingBottom: 20 }}
+          >
             Search for a Github user
           </h1>
         </div>

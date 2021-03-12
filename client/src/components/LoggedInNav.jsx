@@ -31,7 +31,7 @@ const LoggedInNav = () => {
             style={{ width: '100%', backgroundColor: 'transparent' }}
           >
             <div className="navbar-container-logged-in">
-              <Link to="/welcome" style={{ textDecoration: 'none' }}>
+              <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
                 <h3 className="navbar-title">Gitsearch</h3>
               </Link>
               <div className="navbar-search-logout-container">
@@ -56,17 +56,7 @@ const LoggedInNav = () => {
                     to="/logout"
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <Button
-                      onClick={handleSignOut}
-                      style={{
-                        backgroundColor: '#0f3c49',
-                        color: 'white',
-                        border: 'none',
-                        boxShadow: 'none'
-                      }}
-                    >
-                      Logout
-                    </Button>
+                    <p onClick={handleSignOut}>Logout</p>
                   </Link>
                 </div>
               </div>
