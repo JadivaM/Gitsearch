@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(cookieParser());
 
 // Unauthenticated routes
-app.use(openRoutes);
+app.use('/', openRoutes);
 
 // Serve any static files
 if (process.env.NODE_ENV === 'production') {
