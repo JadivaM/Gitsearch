@@ -75,6 +75,18 @@ body {
   background-repeat: no-repeat;
 }
 
+.login-form-header {
+  color: #0f3c49;
+  font-size: 2.5rem;
+}
+
+#login-form-button {
+  color: #fff;
+  background-color: #0f3c49;
+  border: none;
+  box-shadow: none;
+}
+
 .reset-password-instructions {
   width: 40%;
   color: rgb(100, 100, 102);
@@ -82,7 +94,7 @@ body {
   text-align: center;
 }
 
-.form {
+#form {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -92,12 +104,17 @@ body {
 .main-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-.form-container {
+#form-container {
   position: absolute;
   top: 20%;
   right: 5%;
+  width: 400px;
+  height: 375px;
+  background-color: #fff;
 }
 
 .reset-password-instructions-img {
@@ -204,5 +221,38 @@ body {
   }
   .navbar-title {
     font-size: 1.1rem;
+  }
+  .loginBackgroundImage {
+    background-image: none;
+    background-color: #fff;
+    width: 100vw;
+  }
+  .main-container {
+    background-color: #fff;
+    width: 100vw;
+    height: auto;
+    margin: auto;
+  }
+  #form-container {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 50px;
+  }
+  .login-form-header {
+    font-size: 1.6rem;
+  }
+  .login-form-input-label {
+    font-size: 0.9rem;
+  }
+  #login-form-button {
+    font-size: 1rem;
+  }
+  .login-form-signup {
+    font-size: 1rem;
+    margin-block: 0;
   }
 }
