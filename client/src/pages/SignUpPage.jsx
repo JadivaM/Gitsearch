@@ -6,8 +6,8 @@ import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 
 const SignUp = ({ history }) => {
-  const { setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState(null);
+  const { setCurrentUser } = useContext(AppContext);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,11 +17,11 @@ const SignUp = ({ history }) => {
     e.preventDefault();
     try {
       const response = await axios.post('/signup', formData);
-      sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data);
+      // sessionStorage.setItem('user', response.data);
       history.push('/login');
     } catch (error) {
-      console.log('Signup error:', error.toString());
+      console.log('SignUp Error: ', error);
     }
   };
   return (
@@ -44,7 +44,6 @@ const SignUp = ({ history }) => {
                 </Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
-                  id="name"
                   type="text"
                   name="name"
                   onChange={handleChange}
@@ -56,7 +55,6 @@ const SignUp = ({ history }) => {
                 </Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
-                  id="form-input"
                   type="email"
                   name="email"
                   onChange={handleChange}
@@ -68,13 +66,13 @@ const SignUp = ({ history }) => {
                 </Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
-                  id="login-form-input"
                   type="password"
                   name="password"
                   onChange={handleChange}
                 />
                 <small id="passwordHelpBlock" class="form-text text-muted">
-                  Your password must be longer than 6 characters.
+                  Your password must be longer than 6 characters and cannot be
+                  password.
                 </small>
               </Form.Group>
               <Form.Group className="d-flex justify-content-center">
