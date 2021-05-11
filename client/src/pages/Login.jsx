@@ -39,7 +39,7 @@ const Login = ({ history }) => {
             >
               <h1 className="login-form-header">Welcome back!</h1>
               <Form.Group>
-                <Form.Label htmlFor="email" className="login-form-input-label">
+                <Form.Label htmlFor="email" className="form-label">
                   Email Address
                 </Form.Label>
                 <Form.Control
@@ -51,10 +51,7 @@ const Login = ({ history }) => {
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label
-                  htmlFor="password"
-                  className="login-form-input-label"
-                >
+                <Form.Label htmlFor="password" className="form-label">
                   Password
                 </Form.Label>
                 <Form.Control

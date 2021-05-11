@@ -39,7 +39,7 @@ const SignUp = ({ history }) => {
             >
               <h1 className="login-form-header">Get started</h1>
               <Form.Group>
-                <Form.Label className="login-form-input-label" htmlFor="name">
+                <Form.Label className="form-label" htmlFor="name">
                   Name
                 </Form.Label>
                 <Form.Control
@@ -51,22 +51,19 @@ const SignUp = ({ history }) => {
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label className="login-form-input-label" htmlFor="email">
+                <Form.Label className="form-label" htmlFor="email">
                   Email Address
                 </Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
-                  id="login-form-input"
+                  id="form-input"
                   type="email"
                   name="email"
                   onChange={handleChange}
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label
-                  className="login-form-input-label"
-                  htmlFor="password"
-                >
+                <Form.Label className="form-label" htmlFor="password">
                   Password
                 </Form.Label>
                 <Form.Control
