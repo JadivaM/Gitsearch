@@ -117,6 +117,18 @@ body {
   background-color: #fff;
 }
 
+#reset-password-header {
+  color: #0f3c49;
+  font-size: 3rem;
+}
+
+.reset-password-submit-button {
+  color: white;
+  background-color: #0f3c49;
+  border: none;
+  box-shadow: none;
+}
+
 .reset-password-instructions-img {
   width: 20%;
   height: 20%;
@@ -246,14 +258,26 @@ body {
   .login-form-header {
     font-size: 1.6rem;
   }
-  .login-form-input-label {
+  .form-label {
     font-size: 0.9rem;
   }
   #login-form-button {
     font-size: 1rem;
+    width: 100%;
   }
   .login-form-signup {
     font-size: 1rem;
     margin-block: 0;
+  }
+  #reset-password-header {
+    font-size: 1.6rem;
+  }
+  .reset-password-instructions {
+    font-size: 0.95rem;
+    width: 300px;
+  }
+  .reset-password-instructions-img {
+    width: 125px;
+    height: auto;
   }
 }
