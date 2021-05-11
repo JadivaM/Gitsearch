@@ -23,6 +23,16 @@ body {
   font-weight: bolder;
 }
 
+#welcome-page-button {
+  color: #fff;
+  background-color: #0f3c49;
+  border: none;
+  width: 100px;
+  margin-right: 40px;
+  margin-top: 20px;
+  box-shadow: none;
+}
+
 .navbar-title {
   border: black 2px solid;
   width: fit-content;
@@ -169,4 +179,30 @@ body {
 .search-page-results-buttons {
   display: flex;
   justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 425px) {
+  .welcome-page-hero-image-container-text {
+    width: 250px;
+    padding-left: 5%;
+  }
+  .welcome-page-hero-image-text-title {
+    padding-top: 15%;
+    color: #0f3c49;
+    font-size: 2.8rem;
+    font-weight: bolder;
+  }
+  .welcome-page-buttons-container {
+    display: flex;
+  }
+  #welcome-page-button {
+    width: 85px;
+    margin-right: 25px;
+  }
+  .welcome-page-hero-image-text-title--caption {
+    font-size: 1rem;
+  }
+  .navbar-title {
+    font-size: 1.1rem;
+  }
 }
