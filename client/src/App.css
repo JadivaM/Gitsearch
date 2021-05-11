@@ -222,7 +222,8 @@ body {
   .navbar-title {
     font-size: 1.1rem;
   }
-  .loginBackgroundImage {
+  .loginBackgroundImage,
+  .homeBackgroundImage {
     background-image: none;
     background-color: #fff;
     width: 100vw;
