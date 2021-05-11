@@ -43,7 +43,7 @@ const Login = ({ history }) => {
                   Email Address
                 </Form.Label>
                 <Form.Control
-                  id="login-form-input"
+                  // id="form-input"
                   style={{ boxShadow: 'none' }}
                   type="email"
                   name="email"
@@ -55,7 +55,7 @@ const Login = ({ history }) => {
                   Password
                 </Form.Label>
                 <Form.Control
-                  id="login-form-input"
+                  // id="form-input"
                   style={{ boxShadow: 'none' }}
                   type="password"
                   name="password"
