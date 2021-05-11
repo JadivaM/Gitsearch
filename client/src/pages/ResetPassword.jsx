@@ -45,7 +45,6 @@ const ForgotPassword = () => {
               <Form.Group controlId="formBasicEmail">
                 <Form.Label className="form-label">Email address</Form.Label>
                 <Form.Control
-                  id="login-form-input"
                   style={{ boxShadow: 'none' }}
                   type="email"
                   name="email"
