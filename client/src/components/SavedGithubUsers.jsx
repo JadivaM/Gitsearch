@@ -52,7 +52,11 @@ const SavedGithubUsers = () => {
                 <Card.Text id="saved-users-profile-url">
                   Profile URL: {githubUserData.html_url}
                 </Card.Text>
-                <a href={githubUserData.html_url} target="_blank">
+                <a
+                  href={githubUserData.html_url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <Button
                     id="saved-users-profile-button"
                     variant="outline-primary"
