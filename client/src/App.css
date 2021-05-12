@@ -40,21 +40,13 @@ body {
   color: black;
 }
 
-.navbar-container,
-.navbar-container-logged-in {
-  padding-left: 1%;
+#navbar-text {
+  margin-left: 30px;
+  margin-top: 10px;
 }
 
-.navbar-container-logged-in {
-  display: flex;
-}
-
-.navbar-search-logout-container {
-  display: flex;
-  justify-content: space-between;
-  width: 25%;
-  position: absolute;
-  right: 20px;
+#navbar-text:hover {
+  text-decoration: underline 2px;
 }
 
 .homeBackgroundImage {
