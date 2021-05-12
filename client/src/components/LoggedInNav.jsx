@@ -40,7 +40,7 @@ const LoggedInNav = () => {
                     to="/"
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <p>My profile</p>
+                    <p className="navbar-link">My profile</p>
                   </Link>
                 </div>
                 <div className="navbar-search-link">
@@ -48,7 +48,7 @@ const LoggedInNav = () => {
                     to="/search"
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <p>Search</p>
+                    <p className="navbar-link">Search</p>
                   </Link>
                 </div>
                 <div className="navbar-logout">
@@ -56,7 +56,9 @@ const LoggedInNav = () => {
                     to="/logout"
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <p onClick={handleSignOut}>Logout</p>
+                    <p className="navbar-link" onClick={handleSignOut}>
+                      Logout
+                    </p>
                   </Link>
                 </div>
               </div>
