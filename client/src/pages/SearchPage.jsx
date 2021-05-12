@@ -8,7 +8,7 @@ const SearchPage = () => {
       <div className="search-page-main-container">
         <LoggedInNav />
         <div className="title">
-          <h1 className="search-page-title">Search for a Github user</h1>
+          <h1 className="search-page-title">Search for a user</h1>
         </div>
         <div className="search-container">
           <Search />
