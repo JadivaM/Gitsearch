@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 const ResultsCard = ({ users }) => {
   const handleSave = async () => {
@@ -10,7 +11,7 @@ const ResultsCard = ({ users }) => {
         method: 'PUT',
         headers: {
           'Content-Length': 0,
-          Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
+          Authorization: 'token process.env.GITHUB_TOKEN'
         }
       });
       await axios({
@@ -71,7 +72,7 @@ const ResultsCard = ({ users }) => {
               ) : null}
               {users.html_url ? (
                 <div className="search-page-results-buttons">
-                  <a href={users.html_url}>
+                  <Link to={{ pathname: users.html_url }} target="_blank">
                     <Button
                       style={{
                         backgroundColor: '#0f3c49',
@@ -81,7 +82,7 @@ const ResultsCard = ({ users }) => {
                     >
                       View profile
                     </Button>
-                  </a>
+                  </Link>
                   <Button
                     style={{
                       backgroundColor: '#0f3c49',
