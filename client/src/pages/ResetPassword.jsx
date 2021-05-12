@@ -26,7 +26,7 @@ const ForgotPassword = () => {
         <NavigationBar />
         <div className="reset-password-container-form">
           <Container className="container d-flex flex-column align-items-center justify-content-center fullscreen">
-            <h1 style={{ color: '#0f3c49', fontSize: '3rem' }} className="mb-4">
+            <h1 id="reset-password-header" className="mb-4">
               Reset Password
             </h1>
             <p className="reset-password-instructions">
@@ -43,7 +43,7 @@ const ForgotPassword = () => {
               autoComplete="off"
             >
               <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label className="form-label">Email address</Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
                   type="email"
@@ -55,13 +55,8 @@ const ForgotPassword = () => {
               </Form.Group>
               <Form.Group className="d-flex justify-content-center">
                 <Button
-                  style={{
-                    color: 'white',
-                    backgroundColor: '#0f3c49',
-                    border: 'none',
-                    boxShadow: 'none'
-                  }}
-                  variant="primary"
+                  className="reset-password-submit-button"
+                  id="login-form-button"
                   type="submit"
                 >
                   Submit

@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import swal from 'sweetalert';
+import { Link } from 'react-router-dom';
 
 const ResultsCard = ({ users }) => {
   const handleSave = async () => {
@@ -10,7 +11,7 @@ const ResultsCard = ({ users }) => {
         method: 'PUT',
         headers: {
           'Content-Length': 0,
-          Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
+          Authorization: 'token process.env.GITHUB_TOKEN'
         }
       });
       await axios({
@@ -40,54 +41,67 @@ const ResultsCard = ({ users }) => {
     <>
       <div className="search-page-results">
         <div className="search-page-results-information">
-          <Card style={{ width: 450, height: 500, border: 'none' }}>
-            <Card.Body
-              style={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center'
-              }}
-            >
-              <Card.Title style={{ textAlign: 'center', fontSize: '2rem' }}>
-                {users.name}
-              </Card.Title>
-              <Card.Subtitle
-                className="mb-2 text-muted"
-                style={{ textAlign: 'center' }}
-              >
-                {users.login}
-              </Card.Subtitle>
-              <Card.Text>Profile: {users.html_url}</Card.Text>
-              <Card.Text>Repositories: {users.repos_url}</Card.Text>
-
-              <div className="search-page-results-buttons">
-                <a href={users.html_url}>
+          <Card id="search-results-card">
+            {users.avatar_url ? (
+              <Card.Img
+                variant="top"
+                src={users.avatar_url}
+                alt="Github user avatar"
+                id="search-page-mobile-avatar"
+              />
+            ) : null}
+            <Card.Body id="search-results-card-body">
+              {users.name ? (
+                <Card.Title id="search-results-card-title">
+                  {users.name}
+                </Card.Title>
+              ) : null}
+              {users.login ? (
+                <Card.Subtitle
+                  id="search-results-card-username"
+                  className="mb-2 text-muted"
+                  style={{ textAlign: 'center' }}
+                >
+                  {users.login}
+                </Card.Subtitle>
+              ) : null}
+              {users.html_url ? (
+                <Card.Text id="search-results-card-profile-url">
+                  Profile: {users.html_url}
+                </Card.Text>
+              ) : null}
+              {users.html_url ? (
+                <div className="search-page-results-buttons">
+                  <Link to={{ pathname: users.html_url }} target="_blank">
+                    <Button
+                      style={{
+                        backgroundColor: '#0f3c49',
+                        border: 'none',
+                        boxShadow: 'none'
+                      }}
+                    >
+                      View profile
+                    </Button>
+                  </Link>
                   <Button
                     style={{
                       backgroundColor: '#0f3c49',
                       border: 'none',
                       boxShadow: 'none'
                     }}
+                    onClick={handleSave}
                   >
-                    View profile
+                    Save User
                   </Button>
-                </a>
-                <Button
-                  style={{
-                    backgroundColor: '#0f3c49',
-                    border: 'none',
-                    boxShadow: 'none'
-                  }}
-                  onClick={handleSave}
-                >
-                  Save User
-                </Button>
-              </div>
+                </div>
+              ) : null}
             </Card.Body>
           </Card>
         </div>
         <div className="search-page-results-image">
-          <img src={users.avatar_url} alt="Github user avatar" />
+          {users.avatar_url ? (
+            <img src={users.avatar_url} alt="Github user avatar" />
+          ) : null}
         </div>
       </div>
     </>

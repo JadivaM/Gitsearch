@@ -23,6 +23,16 @@ body {
   font-weight: bolder;
 }
 
+#welcome-page-button {
+  color: #fff;
+  background-color: #0f3c49;
+  border: none;
+  width: 100px;
+  margin-right: 40px;
+  margin-top: 20px;
+  box-shadow: none;
+}
+
 .navbar-title {
   border: black 2px solid;
   width: fit-content;
@@ -30,21 +40,13 @@ body {
   color: black;
 }
 
-.navbar-container,
-.navbar-container-logged-in {
-  padding-left: 1%;
+#navbar-text {
+  margin-left: 30px;
+  margin-top: 10px;
 }
 
-.navbar-container-logged-in {
-  display: flex;
-}
-
-.navbar-search-logout-container {
-  display: flex;
-  justify-content: space-between;
-  width: 25%;
-  position: absolute;
-  right: 20px;
+#navbar-text:hover {
+  text-decoration: underline 2px;
 }
 
 .homeBackgroundImage {
@@ -65,6 +67,18 @@ body {
   background-repeat: no-repeat;
 }
 
+.login-form-header {
+  color: #0f3c49;
+  font-size: 2.5rem;
+}
+
+#login-form-button {
+  color: #fff;
+  background-color: #0f3c49;
+  border: none;
+  box-shadow: none;
+}
+
 .reset-password-instructions {
   width: 40%;
   color: rgb(100, 100, 102);
@@ -72,7 +86,7 @@ body {
   text-align: center;
 }
 
-.form {
+#form {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -82,12 +96,29 @@ body {
 .main-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
-.form-container {
+#form-container {
   position: absolute;
   top: 20%;
   right: 5%;
+  width: 400px;
+  height: 375px;
+  background-color: #fff;
+}
+
+#reset-password-header {
+  color: #0f3c49;
+  font-size: 3rem;
+}
+
+.reset-password-submit-button {
+  color: white;
+  background-color: #0f3c49;
+  border: none;
+  box-shadow: none;
 }
 
 .reset-password-instructions-img {
@@ -117,7 +148,7 @@ body {
 .cover-photo-img {
   width: 100%;
   height: 33%;
-  border-radius: 5%/30%;
+  border-radius: 10px;
   background-position: center;
   background-image: url('./images/githubarthearts.png');
   background-size: cover;
@@ -141,9 +172,52 @@ body {
 
 .githubUserData-cards {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   padding: 5px;
   justify-content: space-evenly;
+}
+
+#search-page-search-button {
+  background-color: #0f3c49;
+  border: none;
+  box-shadow: none;
+}
+
+.search-page-title {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#search-input {
+  position: relative;
+}
+
+.mobile-search-btn {
+  visibility: visible;
+}
+
+.mobile-search-icon {
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#saved-users-card-image {
+  height: 250px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding-top: 10px;
+}
+
+.saved-users-header {
+  text-align: center;
+  padding: 10px;
+  color: #0f3c49;
 }
 
 .search-page-results {
@@ -160,13 +234,179 @@ body {
   line-height: 2.2;
 }
 
+#search-results-card {
+  width: 450px;
+  height: 500px;
+  border: none;
+}
+
+#search-results-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#search-results-card-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+#search-page-mobile-avatar {
+  display: none;
+}
+
 .search-page-results-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  display: block;
+}
+
+#search-results-card-profile-url {
+  text-align: center;
 }
 
 .search-page-results-buttons {
   display: flex;
   justify-content: space-evenly;
+}
+
+.no-saved-users-text {
+  text-align: center;
+}
+
+@media only screen and (max-width: 425px) {
+  .welcome-page-hero-image-container-text {
+    width: 250px;
+    padding-left: 5%;
+  }
+  .welcome-page-hero-image-text-title {
+    padding-top: 15%;
+    color: #0f3c49;
+    font-size: 2.8rem;
+    font-weight: bolder;
+  }
+  .welcome-page-buttons-container {
+    display: flex;
+  }
+  #welcome-page-button {
+    width: 85px;
+    margin-right: 25px;
+  }
+  .welcome-page-hero-image-text-title--caption {
+    font-size: 1rem;
+  }
+  .navbar-title {
+    font-size: 1.1rem;
+  }
+  .loginBackgroundImage,
+  .homeBackgroundImage {
+    background-image: none;
+    background-color: #fff;
+    width: 100vw;
+  }
+  .main-container {
+    background-color: #fff;
+    width: 100vw;
+    height: auto;
+    margin: auto;
+  }
+  #form-container {
+    width: 100vw;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 50px;
+  }
+  .form-label {
+    font-size: 0.9rem;
+  }
+  #login-form-button {
+    font-size: 1rem;
+    width: 100%;
+  }
+  .login-form-signup {
+    font-size: 1rem;
+    margin-block: 0;
+  }
+  #reset-password-header,
+  .saved-users-header,
+  .login-form-header,
+  .search-page-title {
+    font-size: 1.6rem;
+  }
+  .reset-password-instructions {
+    font-size: 0.95rem;
+    width: 300px;
+  }
+  .reset-password-instructions-img {
+    width: 140px;
+    height: auto;
+  }
+  .cover-photo-img {
+    width: 100vw;
+  }
+  .profile-avatar {
+    width: 125px;
+    height: 125px;
+    margin-top: 75px;
+  }
+  #saved-users-card-image {
+    height: 150px;
+    width: 150px;
+  }
+  #saved-users-name,
+  #search-results-card-title {
+    font-size: 1rem;
+  }
+  #saved-users-username,
+  #search-results-card-username {
+    font-size: 0.9rem;
+  }
+  #saved-users-profile-url,
+  #saved-users-repo-url,
+  #search-results-card-profile-url {
+    font-size: 0.9rem;
+  }
+  #saved-users-profile-button,
+  #saved-users-delete-button {
+    width: 120px;
+    font-size: 0.9rem;
+  }
+  .no-saved-users-text {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  #saved-users-card {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .search-bar {
+    width: 300px;
+  }
+  .mobile-search-btn {
+    visibility: hidden;
+  }
+  .mobile-search-icon {
+    visibility: visible;
+  }
+  #search-results-card {
+    width: 300px;
+    height: 300px;
+  }
+  #search-page-mobile-avatar {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    display: block;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+  }
+  .search-page-results-image img {
+    display: none;
+  }
 }

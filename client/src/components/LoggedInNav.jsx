@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Navbar, Button } from 'react-bootstrap';
+import { Navbar, Nav, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
@@ -25,12 +25,43 @@ const LoggedInNav = () => {
   };
   return (
     <>
-      <div>
-        <Navbar>
-          <Navbar.Brand
-            style={{ width: '100%', backgroundColor: 'transparent' }}
-          >
-            <div className="navbar-container-logged-in">
+      <Navbar className="navbar-container" bg="light" expand="lg">
+        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+          <Navbar.Brand href="/" className="navbar-title">
+            Gitsearch
+          </Navbar.Brand>
+        </Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse
+          id="basic-navbar-nav"
+          className="navbar-container-logged-in"
+        >
+          <Nav id="navbar-container-logged-in" className="mr-auto">
+            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+              <p id="navbar-text">Profile</p>
+            </Link>
+            <Link
+              to="/search"
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <p id="navbar-text">Search</p>
+            </Link>
+            <Link
+              to="/logout"
+              onClick={handleSignOut}
+              style={{ textDecoration: 'none', color: 'black' }}
+            >
+              <p id="navbar-text">Logout</p>
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    </>
+  );
+};
+
+{
+  /* <div className="navbar-container-logged-in">
               <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
                 <h3 className="navbar-title">Gitsearch</h3>
               </Link>
@@ -40,7 +71,7 @@ const LoggedInNav = () => {
                     to="/"
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <p>My profile</p>
+                    <p className="navbar-link">My profile</p>
                   </Link>
                 </div>
                 <div className="navbar-search-link">
@@ -48,7 +79,7 @@ const LoggedInNav = () => {
                     to="/search"
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <p>Search</p>
+                    <p className="navbar-link">Search</p>
                   </Link>
                 </div>
                 <div className="navbar-logout">
@@ -56,16 +87,13 @@ const LoggedInNav = () => {
                     to="/logout"
                     style={{ textDecoration: 'none', color: 'black' }}
                   >
-                    <p onClick={handleSignOut}>Logout</p>
+                    <p className="navbar-link" onClick={handleSignOut}>
+                      Logout
+                    </p>
                   </Link>
                 </div>
               </div>
-            </div>
-          </Navbar.Brand>
-        </Navbar>
-      </div>
-    </>
-  );
-};
+            </div> */
+}
 
 export default LoggedInNav;

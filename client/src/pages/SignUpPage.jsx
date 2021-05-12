@@ -6,8 +6,8 @@ import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 
 const SignUp = ({ history }) => {
-  const { setCurrentUser } = useContext(AppContext);
   const [formData, setFormData] = useState(null);
+  const { setCurrentUser } = useContext(AppContext);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,11 +17,11 @@ const SignUp = ({ history }) => {
     e.preventDefault();
     try {
       const response = await axios.post('/signup', formData);
-      sessionStorage.setItem('user', response.data);
       setCurrentUser(response.data);
+      // sessionStorage.setItem('user', response.data);
       history.push('/login');
     } catch (error) {
-      console.log('Signup error:', error.toString());
+      console.log('SignUp Error: ', error);
     }
   };
   return (
@@ -29,70 +29,62 @@ const SignUp = ({ history }) => {
       <div className="homeBackgroundImage">
         <NavigationBar />
         <div className="main-container">
-          <Container
-            className="form-container"
-            style={{ backgroundColor: 'white', width: 400, height: 500 }}
-          >
+          <Container id="form-container">
             <Form
               autoComplete="off"
               className="form"
+              id="form"
               style={{ width: 300 }}
               onSubmit={handleSignUp}
             >
-              <h1 style={{ color: '#0f3c49', fontSize: '3rem' }}>
-                Get started
-              </h1>
+              <h1 className="login-form-header">Get started</h1>
               <Form.Group>
-                <Form.Label htmlFor="name">Name</Form.Label>
+                <Form.Label className="form-label" htmlFor="name">
+                  Name
+                </Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
-                  id="name"
                   type="text"
                   name="name"
                   onChange={handleChange}
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label htmlFor="email">Email Address</Form.Label>
+                <Form.Label className="form-label" htmlFor="email">
+                  Email Address
+                </Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
-                  id="email"
                   type="email"
                   name="email"
                   onChange={handleChange}
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label htmlFor="password">Password</Form.Label>
+                <Form.Label className="form-label" htmlFor="password">
+                  Password
+                </Form.Label>
                 <Form.Control
                   style={{ boxShadow: 'none' }}
-                  id="password"
                   type="password"
                   name="password"
                   onChange={handleChange}
                 />
                 <small id="passwordHelpBlock" class="form-text text-muted">
-                  Your password must be longer than 6 characters.
+                  Your password must be longer than 6 characters and cannot be
+                  password.
                 </small>
               </Form.Group>
               <Form.Group className="d-flex justify-content-center">
-                <Button
-                  style={{
-                    color: 'white',
-                    backgroundColor: '#0f3c49',
-                    border: 'none',
-                    boxShadow: 'none'
-                  }}
-                  type="submit"
-                  size="lg"
-                  block
-                >
+                <Button id="login-form-button" type="submit" size="lg" block>
                   Sign up
                 </Button>
               </Form.Group>
             </Form>
-            <Link to="/login" style={{ marginLeft: 60, color: 'black' }}>
-              Already have an account? Login
+            <Link to="/login" style={{ textAlign: 'center', color: 'black' }}>
+              <p className="login-form-signup">
+                Already have an account? Login
+              </p>
             </Link>
           </Container>
         </div>

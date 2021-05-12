@@ -33,6 +33,7 @@ const DeleteButton = ({ githubUserData }) => {
       variant="outline-danger"
       style={{ marginLeft: 20 }}
       onClick={handleRemove}
+      id="saved-users-delete-button"
     >
       Remove User
     </Button>

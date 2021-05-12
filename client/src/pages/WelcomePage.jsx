@@ -15,35 +15,14 @@ const WelcomePage = () => {
           <h5 className="welcome-page-hero-image-text-title--caption">
             Easily search, save, and follow Github users in one place
           </h5>
-          <Link to="/login">
-            <Button
-              style={{
-                color: 'white',
-                backgroundColor: '#0f3c49',
-                border: 'none',
-                width: 100,
-                marginRight: 40,
-                marginTop: 20,
-                boxShadow: 'none'
-              }}
-            >
-              Log in
-            </Button>
-          </Link>
-          <Link to="/signup">
-            <Button
-              style={{
-                color: 'white',
-                backgroundColor: '#0f3c49',
-                border: 'none',
-                width: 100,
-                marginTop: 20,
-                boxShadow: 'none'
-              }}
-            >
-              Sign up
-            </Button>
-          </Link>
+          <div className="welcome-page-buttons-container">
+            <Link to="/login">
+              <Button id="welcome-page-button">Log in</Button>
+            </Link>
+            <Link to="/signup">
+              <Button id="welcome-page-button">Sign up</Button>
+            </Link>
+          </div>
         </div>
       </div>
     </>

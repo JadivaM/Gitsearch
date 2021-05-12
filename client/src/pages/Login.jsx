@@ -30,64 +30,56 @@ const Login = ({ history }) => {
       <div className="loginBackgroundImage">
         <NavigationBar />
         <div className="main-container">
-          <Container
-            className="form-container"
-            style={{ backgroundColor: 'white', width: 400, height: 375 }}
-          >
+          <Container id="form-container">
             <Form
               autoComplete="off"
-              className="form"
+              id="form"
               style={{ width: 300 }}
               onSubmit={handleLogin}
             >
-              <h1 style={{ color: '#0f3c49', fontSize: '2.5rem' }}>
-                Welcome back!
-              </h1>
+              <h1 className="login-form-header">Welcome back!</h1>
               <Form.Group>
-                <Form.Label htmlFor="email">Email Address</Form.Label>
+                <Form.Label htmlFor="email" className="form-label">
+                  Email Address
+                </Form.Label>
                 <Form.Control
+                  // id="form-input"
                   style={{ boxShadow: 'none' }}
-                  id="email"
                   type="email"
                   name="email"
                   onChange={handleChange}
                 />
               </Form.Group>
               <Form.Group>
-                <Form.Label htmlFor="password">Password</Form.Label>
+                <Form.Label htmlFor="password" className="form-label">
+                  Password
+                </Form.Label>
                 <Form.Control
+                  // id="form-input"
                   style={{ boxShadow: 'none' }}
-                  id="password"
                   type="password"
                   name="password"
                   onChange={handleChange}
                 />
               </Form.Group>
               <Form.Group className="d-flex justify-content-center">
-                <Button
-                  style={{
-                    color: 'white',
-                    backgroundColor: '#0f3c49',
-                    border: 'none',
-                    boxShadow: 'none'
-                  }}
-                  type="submit"
-                  size="lg"
-                  block
-                >
+                <Button id="login-form-button" type="submit" size="lg" block>
                   Login
                 </Button>
               </Form.Group>
             </Form>
-            <Link to="/signup" style={{ marginLeft: 50, color: 'black' }}>
-              Don't have an account yet? Sign up
+            <Link to="/signup" style={{ textAlign: 'center', color: 'black' }}>
+              <p className="login-form-signup">
+                Don't have an account yet? Sign up
+              </p>
             </Link>
             <div>
               <Link
                 to="/resetpassword"
-                style={{ marginLeft: 130, color: 'black' }}
+                className="login-form-signup"
+                style={{ textAlign: 'center', color: 'black' }}
               >
-                Forgot password
+                <p className="login-form-signup">Forgot password</p>
               </Link>
             </div>
           </Container>
