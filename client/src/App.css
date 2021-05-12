@@ -178,6 +178,33 @@ body {
   justify-content: space-evenly;
 }
 
+#search-page-search-button {
+  background-color: #0f3c49;
+  border: none;
+  box-shadow: none;
+}
+
+.search-page-title {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#search-input {
+  position: relative;
+}
+
+.mobile-search-btn {
+  visibility: visible;
+}
+
+.mobile-search-icon {
+  visibility: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 #saved-users-card-image {
   height: 250px;
   width: 250px;
@@ -280,7 +307,8 @@ body {
   }
   #reset-password-header,
   .saved-users-header,
-  .login-form-header {
+  .login-form-header,
+  .search-page-title {
     font-size: 1.6rem;
   }
   .reset-password-instructions {
@@ -326,5 +354,14 @@ body {
     display: flex;
     justify-content: center;
     margin: auto;
+  }
+  .search-bar {
+    width: 300px;
+  }
+  .mobile-search-btn {
+    visibility: hidden;
+  }
+  .mobile-search-icon {
+    visibility: visible;
   }
 }
