@@ -23,7 +23,6 @@ const SavedGithubUsers = () => {
 
   return (
     <div className="githubUserData-cards">
-      <h1 className="saved-users-header">Saved users</h1>
       {!githubUserData || githubUserData.length == 0 ? (
         <p className="no-saved-users-text">No saved users yet :(</p>
       ) : (
