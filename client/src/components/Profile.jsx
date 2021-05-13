@@ -10,6 +10,7 @@ const Profile = () => {
             <div className="profile-avatar"></div>
           </div>
           <div className="profile-saved-users">
+            <h1 className="saved-users-header">Saved users</h1>
             <SavedGithubUsers />
           </div>
         </div>

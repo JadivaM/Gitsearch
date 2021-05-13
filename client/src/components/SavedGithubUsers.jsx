@@ -23,19 +23,18 @@ const SavedGithubUsers = () => {
 
   return (
     <div className="githubUserData-cards">
-      <h1 className="saved-users-header">Saved users</h1>
       {!githubUserData || githubUserData.length == 0 ? (
         <p className="no-saved-users-text">No saved users yet :(</p>
       ) : (
         githubUserData?.map((githubUserData) => {
           return (
-            <Card id="saved-users-card" style={{ width: 310 }}>
+            <Card id="saved-users-card">
               <Card.Img
                 variant="top"
                 src={githubUserData.avatar_url}
                 id="saved-users-card-image"
               />
-              <Card.Body>
+              <Card.Body id="saved-users-card-information">
                 <Card.Title
                   id="saved-users-name"
                   style={{ textAlign: 'center' }}

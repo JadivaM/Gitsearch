@@ -32,6 +32,7 @@ const Search = () => {
         <div className="search-bar" style={{ marginTop: 0 }}>
           <Form id="search-input" inline onSubmit={handleSubmit}>
             <FormControl
+              id="search-form"
               style={{
                 boxShadow: 'none'
               }}
