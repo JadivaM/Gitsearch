@@ -323,6 +323,8 @@ body {
   font-size: 0.9rem;
 }
 
+/* Media queries for smaller screens */
+
 @media only screen and (max-width: 1200px) {
   .welcome-page-hero-image-container-text {
     width: 240px;
