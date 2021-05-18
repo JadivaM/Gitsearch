@@ -10,6 +10,7 @@ import ResetPassword from './pages/ResetPassword';
 import UpdatePassword from './pages/UpdatePassword';
 import { AppContextProvider } from './context/AppContext';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
