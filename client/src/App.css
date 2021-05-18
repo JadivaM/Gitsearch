@@ -51,7 +51,7 @@ body {
 }
 
 #navbar-text:hover {
-  text-decoration: underline 2px;
+  text-decoration: underline;
 }
 
 .homeBackgroundImage {
@@ -70,6 +70,10 @@ body {
   background-position: 40% 60%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.login-form-signup {
+  margin: 0;
 }
 
 .login-form-header {
@@ -377,7 +381,6 @@ body {
   }
   .login-form-signup {
     font-size: 1rem;
-    margin-block: 0;
   }
   #reset-password-header,
   .saved-users-header,
@@ -525,7 +528,6 @@ body {
   }
   .login-form-signup {
     font-size: 1rem;
-    margin-block: 0;
   }
   #reset-password-header,
   .saved-users-header,
@@ -669,7 +671,6 @@ body {
   }
   .login-form-signup {
     font-size: 1rem;
-    margin-block: 0;
   }
   #reset-password-header,
   .saved-users-header,
