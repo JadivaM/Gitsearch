@@ -18,15 +18,14 @@ const SignUp = ({ history }) => {
     e.preventDefault();
     try {
       if (formData.password !== formData.confirmPassword) {
-        swal('Error', 'Oops, passwords must match.');
+        swal('Error', 'Passwords must match.');
         return;
       }
       const response = await axios.post('/signup', formData);
       setCurrentUser(response.data);
-      // sessionStorage.setItem('user', response.data);
       history.push('/login');
     } catch (error) {
-      console.log('SignUp Error: ', error);
+      swal('Error', 'Oops, something went wrong.');
     }
   };
   return (

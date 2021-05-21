@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
 import NavigationBar from '../components/NavigationBar';
+import swal from 'sweetalert';
 
 const Login = ({ history }) => {
   const [formData, setFormData] = useState(null);
@@ -21,7 +22,7 @@ const Login = ({ history }) => {
       setCurrentUser(response.data);
       history.push('/');
     } catch (error) {
-      console.log('Login Error: ', error);
+      swal(`Oops!`, 'Something went wrong.');
     }
   };
 
