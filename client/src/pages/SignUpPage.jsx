@@ -4,6 +4,7 @@ import { Container, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const SignUp = ({ history }) => {
   const [formData, setFormData] = useState(null);
@@ -16,6 +17,10 @@ const SignUp = ({ history }) => {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
+      if (formData.password !== formData.confirmPassword) {
+        swal('Error', 'Oops, passwords must match.');
+        return;
+      }
       const response = await axios.post('/signup', formData);
       setCurrentUser(response.data);
       // sessionStorage.setItem('user', response.data);
@@ -68,6 +73,17 @@ const SignUp = ({ history }) => {
                   style={{ boxShadow: 'none' }}
                   type="password"
                   name="password"
+                  onChange={handleChange}
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Label className="form-label" htmlFor="password">
+                  Confirm password
+                </Form.Label>
+                <Form.Control
+                  style={{ boxShadow: 'none' }}
+                  type="password"
+                  name="confirmPassword"
                   onChange={handleChange}
                 />
                 <small id="passwordHelpBlock" class="form-text text-muted">
