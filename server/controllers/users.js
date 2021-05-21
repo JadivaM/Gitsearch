@@ -3,7 +3,7 @@ const User = require('../db/models/user'),
     sendWelcomeEmail,
     sendCancellationEmail,
     forgotPasswordEmail
-  } = require('../emails/'),
+  } = require('../emails/index'),
   jwt = require('jsonwebtoken');
 
 exports.createUser = async (req, res) => {
@@ -14,13 +14,13 @@ exports.createUser = async (req, res) => {
       email,
       password
     });
+
     const token = await user.generateAuthToken();
-    sendWelcomeEmail(user.email, user.name);
     res.cookie('jwt', token, {
-      httpOnly: true,
       sameSite: 'Strict',
       secure: process.env.NODE_ENV !== 'production' ? false : true
     });
+    sendWelcomeEmail(user.email, user.name);
     res.status(201).json(user);
   } catch (e) {
     res.status(400).json({ error: e.toString() });
@@ -33,7 +33,6 @@ exports.loginUser = async (req, res) => {
     const user = await User.findByCredentials(email, password);
     const token = await user.generateAuthToken();
     res.cookie('jwt', token, {
-      httpOnly: true,
       sameSite: 'Strict',
       secure: process.env.NODE_ENV !== 'production' ? false : true
     });
@@ -51,7 +50,9 @@ exports.requestPasswordReset = async (req, res) => {
     const token = jwt.sign(
       { _id: user._id.toString(), name: user.name },
       process.env.JWT_SECRET,
-      { expiresIn: '10m' }
+      {
+        expiresIn: '10m'
+      }
     );
     forgotPasswordEmail(email, token);
     res.json({ message: 'Check your email for reset password instructions' });
@@ -67,7 +68,6 @@ exports.passwordRedirect = async (req, res) => {
       if (err) throw new Error(err.message);
     });
     res.cookie('jwt', token, {
-      httpOnly: true,
       maxAge: 600000,
       sameSite: 'Strict'
     });
