@@ -350,13 +350,11 @@ body {
 
 @media only screen and (max-width: 1200px) {
   .welcome-page-hero-image-container-text {
-    width: 240px;
-    padding-left: 2%;
+    width: 500px;
   }
   .welcome-page-hero-image-text-title {
-    padding-top: 10%;
-    color: #0f3c49;
-    font-size: 2rem;
+    color: #fff;
+    font-size: 2.5rem;
     font-weight: bolder;
   }
   .welcome-page-buttons-container {
@@ -364,11 +362,10 @@ body {
   }
   #welcome-page-button {
     font-size: 0.9rem;
-    width: 100px;
-    margin-right: 25px;
+    width: 130px;
   }
   .welcome-page-hero-image-text-title--caption {
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   .navbar-title {
     font-size: 1rem;
@@ -494,12 +491,10 @@ body {
 
 @media only screen and (max-width: 600px) {
   .welcome-page-hero-image-container-text {
-    width: 290px;
-    padding-left: 3%;
+    width: 400px;
   }
   .welcome-page-hero-image-text-title {
-    padding-top: 15%;
-    color: #0f3c49;
+    color: #fff;
     font-size: 2rem;
     font-weight: bolder;
   }
@@ -507,12 +502,11 @@ body {
     display: flex;
   }
   #welcome-page-button {
-    font-size: 0.8rem;
-    width: 90px;
-    margin-right: 25px;
+    font-size: 0.85rem;
+    width: 110px;
   }
   .welcome-page-hero-image-text-title--caption {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
   .navbar-title {
     font-size: 1rem;
@@ -638,12 +632,11 @@ body {
 
 @media only screen and (max-width: 425px) {
   .welcome-page-hero-image-container-text {
-    width: 250px;
+    width: 350px;
     padding-left: 5%;
   }
   .welcome-page-hero-image-text-title {
-    padding-top: 15%;
-    color: #0f3c49;
+    color: #fff;
     font-size: 2rem;
     font-weight: bolder;
   }
@@ -651,11 +644,11 @@ body {
     display: flex;
   }
   #welcome-page-button {
-    width: 85px;
+    width: 110px;
     margin-right: 25px;
   }
   .welcome-page-hero-image-text-title--caption {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   .navbar-title {
     font-size: 1rem;
