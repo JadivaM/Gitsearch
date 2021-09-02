@@ -87,7 +87,6 @@ const SignUp = ({ history }) => {
                     </InputGroup.Text>
                   </InputGroup.Prepend>
                   <Form.Control
-                    id="form-password-input"
                     style={{ boxShadow: 'none' }}
                     type={showPassword ? 'text' : 'password'}
                     name="password"
@@ -110,7 +109,6 @@ const SignUp = ({ history }) => {
                     </InputGroup.Text>
                   </InputGroup.Prepend>
                   <Form.Control
-                    id="form-password-input"
                     style={{ boxShadow: 'none' }}
                     type={showPassword ? 'text' : 'password'}
                     name="confirmPassword"
