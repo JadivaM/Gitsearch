@@ -91,6 +91,10 @@ body {
   background-repeat: no-repeat;
 }
 
+#password-icon:hover {
+  cursor: pointer;
+}
+
 .login-form-signup {
   margin: 0;
 }

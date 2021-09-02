@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { AppContext } from '../context/AppContext';
@@ -59,41 +59,5 @@ const LoggedInNav = () => {
     </>
   );
 };
-
-{
-  /* <div className="navbar-container-logged-in">
-              <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-                <h3 className="navbar-title">Gitsearch</h3>
-              </Link>
-              <div className="navbar-search-logout-container">
-                <div className="navbar-profile-link">
-                  <Link
-                    to="/"
-                    style={{ textDecoration: 'none', color: 'black' }}
-                  >
-                    <p className="navbar-link">My profile</p>
-                  </Link>
-                </div>
-                <div className="navbar-search-link">
-                  <Link
-                    to="/search"
-                    style={{ textDecoration: 'none', color: 'black' }}
-                  >
-                    <p className="navbar-link">Search</p>
-                  </Link>
-                </div>
-                <div className="navbar-logout">
-                  <Link
-                    to="/logout"
-                    style={{ textDecoration: 'none', color: 'black' }}
-                  >
-                    <p className="navbar-link" onClick={handleSignOut}>
-                      Logout
-                    </p>
-                  </Link>
-                </div>
-              </div>
-            </div> */
-}
 
 export default LoggedInNav;

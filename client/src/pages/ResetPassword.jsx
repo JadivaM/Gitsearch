@@ -36,6 +36,7 @@ const ForgotPassword = () => {
             <img
               className="reset-password-instructions-img"
               src={resetPassword}
+              alt="graphic of an envelope"
             />
             <Form
               style={{ width: 300 }}
