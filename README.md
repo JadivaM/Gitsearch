@@ -20,7 +20,7 @@
 
 ## Libraries
 
-- JWT to generate authorization tokens,
+- JWT to generate authorization tokens.
 - Bcrypt to hash user passwords.
 - Validator to validate data.
 - Passport for authenticating with a JSON Web Token.
