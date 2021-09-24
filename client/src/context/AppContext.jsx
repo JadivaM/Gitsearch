@@ -6,6 +6,7 @@ const AppContext = createContext();
 const AppContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [githubUserData, setGithubUserData] = useState([]);
   const user = sessionStorage.getItem('user');
 
   useEffect(() => {
@@ -24,7 +25,14 @@ const AppContextProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ currentUser, setCurrentUser, loading, setLoading }}
+      value={{
+        currentUser,
+        setCurrentUser,
+        loading,
+        setLoading,
+        githubUserData,
+        setGithubUserData
+      }}
     >
       {children}
     </AppContext.Provider>

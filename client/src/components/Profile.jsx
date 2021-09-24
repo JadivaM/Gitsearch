@@ -1,21 +1,39 @@
-import React from 'react';
-import SavedGithubUsers from './SavedGithubUsers';
+import React, { useEffect, useContext } from 'react';
+import swal from 'sweetalert';
+import { AppContext } from '../context/AppContext';
+import SavedGithubUsersCard from './SavedGithubUsersCard';
+import axios from 'axios';
 
 const Profile = () => {
+  const { githubUserData, setGithubUserData } = useContext(AppContext);
+
+  useEffect(() => {
+    axios
+      .get('/api/githubdata')
+      .then((res) => {
+        setGithubUserData(res.data);
+      })
+      .catch((err) => {
+        if (err) {
+          swal('Error', 'Something went wrong.', 'error');
+        }
+      });
+  }, [setGithubUserData]);
+
   return (
-    <>
-      <div className="home-container">
-        <div className="profile-container">
-          <div className="cover-photo-img">
-            <div className="profile-avatar"></div>
-          </div>
-          <div className="profile-saved-users">
-            <h1 className="saved-users-header">Saved users</h1>
-            <SavedGithubUsers />
-          </div>
-        </div>
+    <div className="profile-saved-users">
+      <h1 className="saved-users-header">Saved users</h1>
+      <div className="githubUserData-cards">
+        {!githubUserData || githubUserData.length === 0 ? (
+          <p className="no-saved-users-text">No saved users yet :(</p>
+        ) : (
+          <SavedGithubUsersCard
+            setGithubUserData={setGithubUserData}
+            githubUserData={githubUserData}
+          />
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

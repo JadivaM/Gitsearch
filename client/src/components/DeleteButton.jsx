@@ -3,26 +3,31 @@ import { Button } from 'react-bootstrap';
 import axios from 'axios';
 import swal from 'sweetalert';
 
-const DeleteButton = ({ githubUserData }) => {
+const DeleteButton = ({
+  setGithubUserData,
+  githubUserDataLogin,
+  githubUserDataId
+}) => {
   const handleRemove = async () => {
     try {
-      fetch(`https://api.github.com/user/following/${githubUserData.login}`, {
+      fetch(`https://api.github.com/user/following/${githubUserDataLogin}`, {
         method: 'DELETE',
         headers: {
-          'Content-Length': 0,
-          Authorization: 'token 45b59ff28bda97971cdced394fdcff7e8bcb41ea'
+          Authorization: `token ${process.env.GITHUB_TOKEN}`
         }
       });
       await axios({
         method: 'DELETE',
-        url: `/api/githubdata/${githubUserData._id}`,
+        url: `/api/githubdata/${githubUserDataId}`,
         withCredentials: true
       });
       swal(
         'Removed from profile!',
-        `You are no longer following ${githubUserData.login} on Github`,
+        `You are no longer following ${githubUserDataLogin} on Github`,
         'success'
       );
+      const usersDataRes = await axios.get('/api/githubdata');
+      setGithubUserData(usersDataRes.data);
     } catch (err) {
       swal('Error', 'Something went wrong.', 'error');
     }

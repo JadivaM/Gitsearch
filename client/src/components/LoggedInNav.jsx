@@ -25,11 +25,9 @@ const LoggedInNav = () => {
   };
   return (
     <>
-      <Navbar className="navbar-container" bg="light" expand="lg">
+      <Navbar id="navbar-container" bg="light" expand="lg">
         <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-          <Navbar.Brand href="/" className="navbar-title">
-            Gitsearch
-          </Navbar.Brand>
+          <Navbar.Brand className="navbar-title">Gitsearch</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse

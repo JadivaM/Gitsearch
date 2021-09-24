@@ -11,7 +11,7 @@ const ResultsCard = ({ users }) => {
         method: 'PUT',
         headers: {
           'Content-Length': 0,
-          Authorization: 'token process.env.GITHUB_TOKEN'
+          Authorization: `token ${process.env.GITHUB_TOKEN}`
         }
       });
       await axios({
