@@ -11,13 +11,16 @@ https://user-images.githubusercontent.com/73275538/134759464-18aed561-7d4d-44a6-
 ## How to use
 
 - You can sign up and log in with your name, email, and password.
+- If you have already registered your email on the app and try to sign up with the same email you will receive an error and will not be able to create another account.
+- You are able to see the password typed into the input and can verify that your password and confirm password match or you will receive an error and will not be able to create an account.
 - Once you are signed up you will receive a welcome email.
-- If you need to reset your password, you can click on forgot password link to be able to input your email and be sent an update password link.
-- You can then navigate to the search page by clicking on the search button in the navigation bar.
-- In the search page you are able to input a users name on github and the results will be rendered on a card.
-- Once the result is rendered, you may click on 'save' button to save the user to your profile.
-- To navigate to the stored Github users, you can navigate back to home by clicking on the home button in the navigation bar.
-- You will then be able to see all of the saved users and unsave any users you wish to remove.
+- If you need to reset your password, you can click on forgot password link in the login page to be able to input your email and be sent an update password link.
+- Once logged in you can then navigate to the search page by clicking on the search text button in the navigation bar.
+- In the search page you are able to input a user's name on github and the results will be rendered on a card.
+- Once the result is rendered, you may click on the 'Save User' button to save the user to your profile and begin to follow the user on Github.
+- To navigate to the stored Github users, you can navigate back to your profile by clicking on the profile text button in the navigation bar.
+- You will then be able to see all of the saved users in your profile.
+- If you wish to unsave any users clicking on the 'Remove User' button will unsave the user from your profile and unfollow the user on Github.
 - You can also logout of your account to keep your information safe.
 
 ## API information
