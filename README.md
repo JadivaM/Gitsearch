@@ -2,6 +2,11 @@
 
 - This project entailed communicating with the Github API making requests to search for users, save them to the database, when saving a user you will follow the saved user on Github, display all saved users on the users profile, and also unfollow the github user on github. To style various components React Bootstrap was used including the navigation bar and cards that render the user information and Sweet Alert to show success and error alerts.
 
+## Demo
+
+https://user-images.githubusercontent.com/73275538/134759372-a020ef27-ebcb-49fd-8342-2622ad2e2a9f.mp4
+
+
 ## How to use
 
 - You can sign up and log in with your name, email, and creating a password.
