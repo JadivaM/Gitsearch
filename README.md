@@ -4,12 +4,13 @@
 
 ## Demo
 
-https://user-images.githubusercontent.com/73275538/134759372-a020ef27-ebcb-49fd-8342-2622ad2e2a9f.mp4
+
+https://user-images.githubusercontent.com/73275538/134759464-18aed561-7d4d-44a6-909f-a865762583ed.mp4
 
 
 ## How to use
 
-- You can sign up and log in with your name, email, and creating a password.
+- You can sign up and log in with your name, email, and password.
 - Once you are signed up you will receive a welcome email.
 - If you need to reset your password, you can click on forgot password link to be able to input your email and be sent an update password link.
 - You can then navigate to the search page by clicking on the search button in the navigation bar.
