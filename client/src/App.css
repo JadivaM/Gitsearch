@@ -81,7 +81,6 @@ body {
 #navbar-container-logged-in {
   position: absolute;
   right: 0;
-  background-color: #fff;
   width: 20%;
   z-index: 10;
 }
