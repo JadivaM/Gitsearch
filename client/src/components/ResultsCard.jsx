@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
 
 const ResultsCard = ({ users }) => {
+  const [savedUser, setSavedUser] = useState();
+
   const handleSave = async () => {
     try {
       fetch(`https://api.github.com/user/following/${users.login}`, {
@@ -14,6 +16,8 @@ const ResultsCard = ({ users }) => {
           Authorization: `token ${process.env.GITHUB_TOKEN}`
         }
       });
+      const dataRes = await axios.get('/api/githubdata');
+      setSavedUser(dataRes.data);
       await axios({
         method: 'POST',
         url: '/api/githubdata',
@@ -83,16 +87,29 @@ const ResultsCard = ({ users }) => {
                       View profile
                     </Button>
                   </Link>
-                  <Button
-                    style={{
-                      backgroundColor: '#0f3c49',
-                      border: 'none',
-                      boxShadow: 'none'
-                    }}
-                    onClick={handleSave}
-                  >
-                    Save User
-                  </Button>
+                  {savedUser ? (
+                    <Button
+                      disabled
+                      style={{
+                        backgroundColor: '#0f3c49',
+                        border: 'none',
+                        boxShadow: 'none'
+                      }}
+                    >
+                      Saved
+                    </Button>
+                  ) : (
+                    <Button
+                      style={{
+                        backgroundColor: '#0f3c49',
+                        border: 'none',
+                        boxShadow: 'none'
+                      }}
+                      onClick={handleSave}
+                    >
+                      Save User
+                    </Button>
+                  )}
                 </div>
               ) : null}
             </Card.Body>

@@ -64,6 +64,10 @@ body {
   font-size: 1.5rem;
 }
 
+.navbar-title.logged-in {
+  border: #000 2px solid;
+}
+
 #navbar-text {
   margin-left: 30px;
   margin-top: 10px;
@@ -81,7 +85,6 @@ body {
 #navbar-container-logged-in {
   position: absolute;
   right: 0;
-  background-color: #fff;
   width: 20%;
   z-index: 10;
 }
